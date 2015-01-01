@@ -19,11 +19,11 @@
 		<style type="text/css">
 			{CSS_CODE}
 		</style>
-		
+
 		<script type="text/javascript">
 			//<![CDATA[
 			{JS_CODE}
-			
+
 			$(document).ready(function() {
 				/* Login Dialog */
 				$( "#dialog-login" ).dialog({
@@ -33,26 +33,26 @@
 					autoOpen: false,
 				});
 			});
-			
+
 			<!-- IF S_NORMAL_HEADER -->
 			var user_timestamp_atom = "{USER_TIMESTAMP_ATOM}";
 			var user_clock_format = "dddd, {USER_DATEFORMAT_LONG} {USER_TIMEFORMAT}";
 			var user_timezone = "{USER_TIMEZONE}";
-			
+
 			var mymoment = moment(user_timestamp_atom).zone(user_timezone);
-			function user_clock(){	
+			function user_clock(){
 				var mydate = mymoment.format(user_clock_format);
 				$('.user_time').html(mydate);
 				mymoment.add(1, 's');
 				window.setTimeout("user_clock()", 1000);
 			}
-			
+
 			function recalculate_notification_bubbles(){
 				var red = 0; var green = 0; var yellow = 0;
 				$('.notification-content ul li').each(function( index ) {
 					var myclass = $(this).attr('class');
 					var count = $(this).data('count');
-					
+
 					if (myclass == 'prio_0') green += parseInt(count);
 					if(myclass == 'prio_1') yellow += parseInt(count);
 					if(myclass == 'prio_2') red += parseInt(count);
@@ -72,18 +72,18 @@
 				} else {
 					$('.notification-bubble-red').html(red).hide();
 				}
-				
+
 				if (yellow ==0 && green==0 && red==0){
 					$('.notification-content ul').html({L_notification_none|jsencode});
 				}
-				
+
 				notification_favicon(red, yellow, green);
 			}
-			
+
 			var favicon;
 			function notification_favicon(red, yellow, green){
 				if (typeof favicon === 'undefined') return;
-				
+
 				if (red > 0) {
 					favicon.badge(red, {bgColor: '#d00'});
 					return;
@@ -98,7 +98,7 @@
 				}
 				favicon.reset();
 			}
-			
+
 			function notification_show_only(name){
 				if (name === 'all'){
 					$('.notification-filter').removeClass('filtered');
@@ -112,25 +112,25 @@
 					if (name === 'notification-bubble-red') $('.notification-content ul li.prio_2').show();
 				}
 			}
-			
-			function notification_update(){			
+
+			function notification_update(){
 				$.get("{EQDKP_CONTROLLER_PATH}Notifications{SEO_EXTENSION}{SID}&load", function(data){
 					$('.notification-content ul').html(data);
 					recalculate_notification_bubbles();
 				});
-					
+
 				//5 Minute
 				window.setTimeout("notification_update()", 1000*60*5);
 			}
 
-			
+
 			$(document).ready(function() {
 				user_clock();
-				
+
 				$( ".openLoginModal" ).on('click', function() {
 					$( "#dialog-login" ).dialog( "open" );
 				});
-				
+
 				/* Notifications */
 				$('.notification-tooltip-trigger').on('click', function(event){
 					$(".notification-tooltip").hide('fast');
@@ -143,14 +143,14 @@
 					     break;
 					   }
 					}
-					
+
 					$(document).on('click', function(event) {
 						var count = $(event.target).parents('.notification-tooltip-container').length;
 						if (count == 0 && (!$(event.target).hasClass('notification-markasread')) ){
 							$(".notification-tooltip").hide('fast');
 						}
 					});
-					
+
 				});
 				$('.notification-mark-all-read').on('click', function() {
 				    $('.notification-content ul').html({L_notification_none|jsencode});
@@ -170,7 +170,7 @@
 						if ($(this).hasClass('notification-bubble-green')) $('.notification-content ul li.prio_0').show();
 						if ($(this).hasClass('notification-bubble-yellow')) $('.notification-content ul li.prio_1').show();
 						if ($(this).hasClass('notification-bubble-red')) $('.notification-content ul li.prio_2').show();
-						
+
 						$(this).removeClass('filtered');
 					} else {
 						//hide all of this
@@ -185,7 +185,7 @@
 				//Update Favicon
 				favicon = new Favico({animation:'none'});
 				notification_favicon({NOTIFICATION_COUNT_RED}, {NOTIFICATION_COUNT_YELLOW}, {NOTIFICATION_COUNT_GREEN});
-				
+
 				$('.user-tooltip-trigger').on('click', function(event){
 					event.preventDefault();
 					$("#user-tooltip").show('fast');
@@ -196,12 +196,12 @@
 						}
 					});
 				});
-				
+
 				$('.user-tooltip-trigger').on('dblclick', function(event){
 					$("#user-tooltip").hide('fast');
 					window.location="{EQDKP_CONTROLLER_PATH}Settings{SEO_EXTENSION}{SID}";
 				});
-				
+
 				$('.mychars-points-tooltip-trigger').on('click', function(event){
 					event.preventDefault();
 					$("#mychars-points-tooltip").show('fast');
@@ -212,7 +212,7 @@
 						}
 					});
 				});
-				
+
 				$('ul.mainmenu li.link_li_indexphp a.link_indexphp, ul.mainmenu li.link_li_entry_home a.link_entry_home').html('');
 				$('ul.mainmenu').addClass('sf-menu');
 				jQuery('ul.mainmenu').superfish({
@@ -220,7 +220,7 @@
 						animation:	{opacity:'show',height:'show'},
 						speed:		'fast'
 				});
-				
+
 				<!-- IF S_MYCHARS_POINTS and U_CHARACTERS != "" -->
 				/* My Chars Points */
 				$('.mychars-points-tooltip .char').on('click', function(){
@@ -246,7 +246,7 @@
 					$(".mychars-points-target").html(icons + " "+current);
 				}
 				<!-- ENDIF -->
-				
+
 			});
 			<!-- ELSE -->
 				<!-- JS for simple header. Above is for normal header only -->
@@ -269,7 +269,7 @@
 						<li>{personal_area_addition.TEXT}</li>
 						<!-- END personal_area_addition -->
 					</ul>
-					
+
 					<!-- ELSE -->
 						<ul>
 							<li>
@@ -293,9 +293,9 @@
 								</div>
 							</li>
 							<!-- IF S_ADMIN --><li><a href="{EQDKP_ROOT_PATH}admin/{SID}"><i class="fa fa-cog fa-lg"></i> <span class="hiddenSmartphone">{L_menu_admin_panel}</span></a></li><!-- ENDIF -->
-							
+
 							<!-- IF U_CHARACTERS != "" --><li><a href="{U_CHARACTERS}"><i class="fa fa-group fa-lg"></i> <span class="hiddenSmartphone">{L_menu_members}</span></a></li><!-- ENDIF -->
-							
+
 							<!-- IF S_MYCHARS_POINTS and U_CHARACTERS != "" -->
 								<li class="hiddenSmartphone">
 									<div class="mychars-points-tooltip-container">
@@ -315,7 +315,7 @@
 								</div>
 								</li>
 							<!-- ENDIF -->
-							
+
 							<li>
 								<div class="notification-tooltip-container">
 									<a class="notification-tooltip-trigger"><i class="fa fa-bolt fa-lg"></i> <span class="hiddenSmartphone">{L_notifications}</span></a>
@@ -323,17 +323,17 @@
 									<span class="notification-tooltip-trigger notification-bubble-yellow hand" <!-- IF NOTIFICATION_COUNT_YELLOW == 0 -->style="display:none;"<!-- ENDIF -->>{NOTIFICATION_COUNT_YELLOW}</span>
 									<span class="notification-tooltip-trigger notification-bubble-green hand" <!-- IF NOTIFICATION_COUNT_GREEN == 0 -->style="display:none;"<!-- ENDIF -->>{NOTIFICATION_COUNT_GREEN}</span>
 									<ul class="dropdown-menu notification-tooltip" role="menu" id="notification-tooltip-all">
-										<li class="notification-action-bar"> 
+										<li class="notification-action-bar">
 											<div class="floatLeft">
 												<span class="notification-bubble-red notification-filter hand" <!-- IF NOTIFICATION_COUNT_RED == 0 -->style="display:none;"<!-- ENDIF --> >{NOTIFICATION_COUNT_RED}</span>
 												<span class="notification-bubble-yellow notification-filter hand" <!-- IF NOTIFICATION_COUNT_YELLOW == 0 -->style="display:none;"<!-- ENDIF -->>{NOTIFICATION_COUNT_YELLOW}</span>
 												<span class="notification-bubble-green notification-filter hand" <!-- IF NOTIFICATION_COUNT_GREEN == 0 -->style="display:none;"<!-- ENDIF -->>{NOTIFICATION_COUNT_GREEN}</span>
 											</div>
-												
+
 											<div class="floatRight">
 												<span class="hand notification-mark-all-read">{L_mark_all_as_read}</span> &bull; <span class="hand" onclick="window.location='{EQDKP_CONTROLLER_PATH}Settings{SEO_EXTENSION}{SID}#fragment-notifications'"><i class="fa fa-cog fa-lg"></i></span>
 											</div>
-											
+
 											<div class="clear"></div>
 										</li>
 										<li class="tooltip-divider"></li>
@@ -345,8 +345,8 @@
 									</ul>
 								</div>
 							</li>
-							
-							
+
+
 							<!-- IF S_SEARCH -->
 							<li class="hiddenDesktop"><a href="{EQDKP_CONTROLLER_PATH}Search{SEO_EXTENSION}{SID}"><i class="fa fa-search"></i></a></li>
 							<!-- ENDIF -->
@@ -374,7 +374,7 @@
 			</div> <!-- close personalArea -->
 		</header>
 		<div id="wrapper">
-			
+
 		<header>
 			<div id="header">
 				<div id="logoContainer" class="{T_LOGO_POSITION}">
@@ -383,19 +383,19 @@
 						<img src="{HEADER_LOGO}" alt="{MAIN_TITLE}" id="mainlogo" />
 						<!-- ENDIF -->
 					</div><!-- close logoArea -->
-					
+
 					<hgroup id="titles">
 							<h1>{MAIN_TITLE}</h1><br />
 							<h2>{SUB_TITLE}</h2>
 					</hgroup><!-- close titles-->
-				
+
 					<div class="clear noheight">&nbsp;</div>
 				</div>
 				{PORTAL_BLOCK1}
 			</div> <!-- close header-->
 		</header>
-		
-		
+
+
 		<section id="contentContainer">
 			<a id="content"></a>
 			<header>
@@ -405,25 +405,31 @@
 							{MAIN_MENU}
 							<div class="clear noheight">&nbsp;</div>
 						</div>
-						<div class="hiddenDesktop mainmenu">
-							<i class="fa fa-list"></i>
-							{MAIN_MENU_SELECT}
+						<div class="hiddenDesktop nav-mobile">
+							<i class="fa fa-list hand" onclick="$('.nav-mobile-overlay').toggle();"></i>
+							<div class="nav-mobile-overlay">
+								<div class="nav-mobile-closebtn" onclick="$('.nav-mobile-overlay').toggle();">
+									<i class="fa fa-lg fa-times hand"></i>
+								</div>
+							{MAIN_MENU_MOBILE}
+							<!-- IF S_IN_ADMIN -->
+							<div class="admin-headline"><i class="fa fa-cog fa-lg"></i> {L_menu_admin_panel}</div>
+							{ADMIN_MENU_MOBILE}
+							<!-- ENDIF -->
+							</div>
 						</div>
 					</div><!-- close mainmenu -->
-					
+
 					<!-- IF S_IN_ADMIN -->
 					<div id="adminmenu">
 						<div class="hiddenSmartphone">
 							{ADMIN_MENU}
 						</div>
-						<div class="hiddenDesktop">
-							<select><option>Admin Navigation</option></select>
-						</div>
 					</div>
 					<!-- ENDIF -->
 				</nav>
 			</header>
-			
+
 			<div class="portal">
 				<div class="columnContainer">
 					<!-- IF S_PORTAL_LEFT -->
@@ -433,21 +439,21 @@
 						</div> <!-- close first column -->
 					</aside>
 					<!-- ENDIF -->
-					
+
 					<article class="second column <!-- IF not S_PORTAL_RIGHT -->no_third_column<!-- ENDIF -->">
 						<div class="columnInner">
 							<!-- IF S_SHOW_COOKIE_HINT -->
 							<div class="infobox infobox-large infobox-blue clearfix">
 								<i class="fa-info-circle fa pull-left fa-2x"></i> {COOKIE_HINT}
 							</div>
-							<!-- ENDIF -->	
+							<!-- ENDIF -->
 							<!-- BEGIN global_warnings -->
 							<header>
 								<div class="infobox infobox-large infobox-{global_warnings.CLASS} clearfix">
 									<i class="{global_warnings.ICON} fa-4x pull-left"></i> {global_warnings.MESSAGE}
 								</div>
 							</header>
-							<!-- END global_warnings -->	
+							<!-- END global_warnings -->
 							<aside id="portal-middle">
 								{PORTAL_MIDDLE}
 							</aside>
@@ -455,7 +461,7 @@
 							<div id="contentBody" class="{PAGE_CLASS}<!-- IF not S_NORMAL_HEADER --> simple-header <!-- ENDIF --><!-- IF not S_NORMAL_FOOTER --> simple-footer <!-- ENDIF -->">
 								<div id="contentBody2">
 									{GBL_CONTENT_BODY}
-								</div>	
+								</div>
 							</div><!-- close contentBody -->
 							<!-- IF S_NORMAL_FOOTER -->
 							<aside id="portal-footer">
@@ -473,7 +479,7 @@
 							</footer>
 						</div>
 					</article><!-- close second column -->
-					
+
 					<!-- IF S_PORTAL_RIGHT -->
 					<aside class="third column portal-right" style="<!-- IF T_COLUMN_RIGHT_WIDTH -->min-width:{T_COLUMN_RIGHT_WIDTH};max-width:{T_COLUMN_RIGHT_WIDTH}<!-- ELSE -->min-width: 200px;<!-- ENDIF -->">
 						<div class="columnInner">
@@ -483,15 +489,15 @@
 					<!-- ENDIF -->
 				</div>
 			</div>
-		
+
 		</section>
-		
+
 		<footer id="footer">
 				{PORTAL_BLOCK2}
 				{EQDKP_PLUS_COPYRIGHT}
 		</footer><!-- close footer -->
 	</div><!-- close wrapper -->
-	
+
 	<!-- ELSE -->
 		<!-- IF S_SHOW_QUERIES --><br />{DEBUG_TABS}<!-- ENDIF -->
 	<!-- ENDIF -->
@@ -511,7 +517,7 @@
 							<i class="fa fa-user"></i><input type="text" name="username" size="30" maxlength="30" class="input username" id="username" placeholder="{L_username}" required />
 							<div class="fv_msg" data-errormessage="{L_fv_required_user}"></div>
 						</div>
-						
+
 					</dd>
 				</dl>
 				<dl>
@@ -544,20 +550,20 @@
 	<script type="text/javascript">
 		{JS_CODE_EOP}
 		{JS_CODE_EOP2}
-		
+
 		//Reponsivness - fired only if breakpoint is reached
 		if ($('body').hasClass('responsive') && $(".reponsiveTestClass").css("text-align") == "center" ) {
 			$('.stackcolumns').stackcolumns({myClass:'stackcolumns hiddenDesktop' });
 			$('.stacktable').stacktable({myClass:'stacktable hiddenDesktop'});
 		}
-		
+
 		//Reset Favicon, for Bookmarks
 		$(window).on('unload', function() {
             if (typeof favicon !== 'undefined'){
 				favicon.reset();
 			}
    		 });
-	</script>		
+	</script>
 	<a id="bottom"></a>
 	</body>
 </html>
