@@ -1237,8 +1237,6 @@ background: url('TEMPLATE_IMAGE_PATH/table_bg_tile.png') repeat scroll 0% 0% #33
 	border-color: #565656;
 }
 
-.ui-tooltip { box-shadow: none !important; }
-
 /* general: information boxes NEW */
 .infobox {
 	background-color: #F5F5F5;
@@ -2286,7 +2284,8 @@ div.error { display: none; }
 	color: #9f9f9f;
 }
 
-.article_content{
+.article_detail_container .tags-container { padding-top: 10px; }
+.article_content {
 	line-height: 16px;
 }
 .article_content p {
@@ -3529,3 +3528,7 @@ background: none;
 #viewraidcal_colapse_3 tbody tbody {
 background: none;
 }
+
+/* Timline Plugin */
+.timeline-years { color: #EBB16C !important; }
+.timeline-dateblock:before { background: #273D81 !important; }
