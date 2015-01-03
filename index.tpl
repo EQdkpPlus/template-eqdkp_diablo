@@ -8,6 +8,7 @@
 		<meta name="keywords" content="{META_KEYWORDS}" />
 		<meta name="description" content="{META_DESCRIPTION}" />
 		<meta name="author" content="{GUILD_TAG}" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
 		{META}
 		{LINK}
 		<title>{PAGE_TITLE}</title>
@@ -378,7 +379,7 @@
 		<header>
 			<div id="header">
 				<div id="logoContainer" class="{T_LOGO_POSITION}">
-					<div id="logoArea" class="hiddenSmartphone">
+					<div id="logoArea">
 						<!-- IF HEADER_LOGO -->
 						<img src="{HEADER_LOGO}" alt="{MAIN_TITLE}" id="mainlogo" />
 						<!-- ENDIF -->
