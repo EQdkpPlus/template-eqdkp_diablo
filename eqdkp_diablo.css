@@ -3374,13 +3374,13 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		display: none;
 		margin-bottom: 10px;
 		padding: 10px;
-		background-color: rgba(255,255,255,.95);
+		background-color: rgba(161,142,115,.95);
 		border-right: 1px solid #bbb;
 		z-index: 999;
 	}
 
 	.nav-mobile-closebtn {
-		background-color: #4E7FA8;
+		background-color: #000;
 		color: #fff;
 		border-radius: 4px;
 		position: fixed;
@@ -3394,7 +3394,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	.mainmenu-mobile > li,  .nav-mobile-overlay .admin-headline, .adminmenu-mobile > li {
 		margin-bottom: 24px;
 		font-size: 18px;
-		color: #4E7FA8;
+		color: #000;
 		font-weight: bold;
 	}
 
@@ -3414,6 +3414,10 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		font-weight: normal;
 		font-size: 15px;
 		margin-top: 6px;
+	}
+	
+	.mainmenu-mobile a, .adminmenu-mobile a, .admin-headline a {
+		color: #000;
 	}
 
 	#admininfos_tabs div, #admininfos_tabs div div {
