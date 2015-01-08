@@ -3744,6 +3744,65 @@ background: none;
 background: none;
 }
 
+
+/*****************************************/
+/* PLUGIN and MODULE adjustments         */
+/*****************************************/
 /* Timline Plugin */
 .timeline-years { color: #EBB16C !important; }
 .timeline-dateblock:before { background: #273D81 !important; }
+
+/* Chat Plugin */
+.chatWindowMin {
+	color: #EBB16C;
+	background-color: #551212;
+	border-color: #4E4949;
+	border-top-left-radius: 35px;
+}
+.chatWindow, .chatWindowMenu {
+	background-color: #333;
+	border-color: #591919;
+}
+.chatWindowHeader, .chatWindowHeader2, .chatWindowHeaderInactive {
+	color: #EBB16C;
+	box-shadow: 1px 1px 15px #000 inset;
+	background: url("TEMPLATE_IMAGE_PATH/headerbg.png") no-repeat scroll left top #4E1212;
+	text-shadow: 1px 1px 10px #000;
+}
+.active .chatWindowHeader, #chatMenu .chatWindowHeader2 {
+	box-shadow: none;
+}
+#chatMenu .chatWindowContent {
+	color: #A18E73;
+}
+.chatOnlineSeperator {
+	border-bottom: 1px solid #6B6B6B;
+}
+.chatInput { border-top: 1px solid #6B6B6B; }
+.chatInput input {
+	margin-top: 1px;
+	margin-left: -1px;
+	margin-bottom: 0px;
+	border-radius: 0;
+}
+
+.chatMessage { color: #A18E73; }
+.chatPost { border-top: 1px solid #6B6B6B; }
+
+.chatOnlineList .hand:hover { color: #E3DBD4; }
+
+.blinkingHeader {
+	-webkit-animation: blinkingHeader 3s infinite;
+	animation: blinkingHeader 3s infinite;
+}
+
+@-webkit-keyframes blinkingHeader {
+    0% {box-shadow: 1px 1px 15px #FF0000 inset;}
+    50% {box-shadow: 1px 1px 15px #000 inset;}
+    100% {box-shadow: 1px 1px 15px #FF0000 inset;}
+}
+@keyframes blinkingHeader {
+    0% {box-shadow: 1px 1px 15px #FF0000 inset;}
+    50% {box-shadow: 1px 1px 15px #000 inset;}
+    100% {box-shadow: 1px 1px 15px #FF0000 inset;}
+}
