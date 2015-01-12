@@ -588,11 +588,11 @@ input[type=radio], input[type=checkbox]{
 	resize: both;
 }
 
-.input-icon, .input-icon-append {
+.input-icon, .input-icon-append, .input-multilang {
 	white-space: nowrap;
 }
 
-.input-icon i {
+.input-icon i, .multilang-switcher {
 	border-radius: 4px 0 0 4px;
 	background-color: #591916;
 	border: 1px solid #591916;
@@ -606,7 +606,46 @@ color: #C9C9C9;
 	display: inline-block;
 }
 
-.input-icon input {
+.input-multilang.textarea .multilang-switcher {
+	border-radius: 4px 4px 0 0;
+	margin-left: 3px;
+}
+
+.input-multilang.textarea textarea{
+	border-radius: 0 4px 4px 4px;
+	margin-top: -1px;
+}
+
+.multilang-switcher-container {
+	position: relative;
+}
+
+.multilang-dropdown {
+	position: absolute;
+	background-color: #EEEEEE;
+	border: 1px solid #CCCCCC;
+	border-radius: 4px 0px 4px 4px;
+	margin-top: -4px;
+	padding: 4px 8px 0px 8px !important;
+	display: none;
+}
+
+.input-multilang.textarea .multilang-dropdown {
+	margin-top: -1px;
+	border-radius: 0 0 4px 4px;
+}
+
+.multilang-dropdown li {
+	margin-bottom: 6px;
+}
+
+.multilang-dropdown li.active:before {
+	content: "\f00c";
+	font-family: FontAwesome;
+	margin-right: 2px;
+}
+
+.input-icon input, .input-multilang input {
 	border-radius: 0 4px 4px 0;
 	margin-left: 0px;
 	height: 20px;
@@ -939,6 +978,8 @@ border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 /* Tables */
 .table {
 	display: table;
+}
+.table.fullwidth {
 	width: 100%;
 }
 .tr { display: table-row;}
@@ -1097,7 +1138,6 @@ fieldset.mediumsettings dd{
 	margin: 0 0 0 35%;
 }
 fieldset.settings dl {
-	overflow: hidden;
 	margin-bottom: 10px;
 	font-size: 0.95em;
 	padding-bottom: 1px;
@@ -1218,6 +1258,10 @@ background: url('TEMPLATE_IMAGE_PATH/table_bg_tile.png') repeat scroll 0% 0% #33
 	font-size: 1.0em !important;
 	font-family: Tahoma, Arial, sans-serif;
 }
+
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor { min-height:1.7em; } /* Fixes for update badges */
+
+.sf-admin > li > a{ min-height: 1.4em; } /* Fixes for update badges */
 
 #contentBody .ui-tabs th.footer {
 	background-color: #fff !important;
@@ -3407,65 +3451,65 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		width: 95% !important;
 	}
 
-	table.scrollable-x {
+	.responsive table.scrollable-x {
 		table-layout: fixed;
 	}
 
-	table.scrollable-x tbody {
+	.responsive table.scrollable-x tbody {
 		display: block;
 		overflow-x: auto;
 	}
 
-	fieldset.settings {
+	.responsive fieldset.settings {
 		max-width: 100%;
 	}
 
-	.permissions {
+	.responsive .permissions {
 		float: none;
 		width: 100%;
 	}
 
-	.ui-notify-close {
+	.responsive .ui-notify-close {
 		font-size: 20px;
 	}
 
-	#mainlogo {
+	.responsive #mainlogo {
 		max-height: 50px;
 	}
 
-	#titles {
+	.responsive #titles {
 		float: left;
 		margin-left: 6px;
 	}
 
-	.nowrap.desktopOnly{
+	.responsive .nowrap.desktopOnly{
 		white-space: normal;
 	}
 
-	#personalAreaUser ul li:last-child{
+	.responsive #personalAreaUser ul li:last-child{
 		margin-right: 0;
 	}
 
-	.comment_avatar_container{
+	responsive .comment_avatar_container{
 		display: none;
 	}
-	.comment_container, #comment_button, .reply-trigger, .reply_button, .comment_write_container {
+	.responsive .comment_container, .responsive #comment_button, .responsive .reply-trigger, .responsive .reply_button, .responsive .comment_write_container {
 		margin-left: 6px;
 	}
 
-	.user-profile > .user-avatar img {
+	.responsive .user-profile > .user-avatar img {
 		height: 48px;
 	}
 
-	.comment-reply {
+	.responsive .comment-reply {
 		margin-left: 30px;
 	}
 
-	.article_content img:not(.itt-icon):not(.classicon):not(.raceicon):not(.rankicon):not(.talenticon):not(.eventicon):not(.roleicon):not(.gameicon) {
+	.responsive .article_content img:not(.itt-icon):not(.classicon):not(.raceicon):not(.rankicon):not(.talenticon):not(.eventicon):not(.roleicon):not(.gameicon) {
 		width: 100% !important;
 	}
 
-	.embed-content div iframe {
+	.responsive .embed-content div iframe {
 	    position: absolute;
 	    top: 0;
 	    left: 0;
@@ -3473,7 +3517,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	    height: 100%;
 	}
 
-	.embed-content {
+	.responsive .embed-content {
 	  position: relative;
 	  padding-bottom: 67.5%;
 	  height: 0;
@@ -3481,7 +3525,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	  overflow: hidden;
 	}
 
-	.ui-notify {
+	.responsive .ui-notify {
 		max-width: 95%;
 	}
 
