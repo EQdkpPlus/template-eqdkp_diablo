@@ -2640,7 +2640,7 @@ a.tool-item i {
 }
 
 /* Notifications */
-.notification-bubble-red {
+.bubble-red {
 	background-color: #B94A48;
 	margin-right: 4px;
 	padding-right: 9px;
@@ -2657,7 +2657,7 @@ a.tool-item i {
 	vertical-align: baseline;
 	white-space: nowrap;
 }
-.notification-bubble-yellow {
+.bubble-yellow {
 	background-color: #F89406;
 	margin-right: 4px;
 	padding-right: 9px;
@@ -2675,7 +2675,7 @@ a.tool-item i {
 	white-space: nowrap;
 }
 
-.notification-bubble-green{
+.bubble-green{
 	background-color: #468847;
 	margin-right: 4px;
 	padding-right: 9px;
@@ -3774,6 +3774,16 @@ background-color: #201111;
 
 .notification_list li:first-child{
 border-top: 1px solid rgba(204, 204, 204, 0.3);
+}
+
+.toggleResponsive {
+	margin-bottom: 6px;
+}
+
+.rte-autocomplete.dropdown-menu {
+	margin-top: 12px;
+	text-align: left;
+	padding-left: 6px;
 }
 
 td.fc-day:hover:after {
