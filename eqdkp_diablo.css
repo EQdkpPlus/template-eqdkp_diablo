@@ -89,7 +89,7 @@ html {
 	min-height: 100%;
 }
 body {
-	background: url('TEMPLATE_BACKGROUND') no-repeat scroll 50% top #0B0C11;
+	background: url('TEMPLATE_BACKGROUND') no-repeat T_BACKGROUND_POSITION 50% top T_BODY_BACKGROUND;
 	font-size: 13px;
 	font-family: Tahoma,Arial,Verdana,sans-serif;
 	color: #A18E73;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <settings styleversion="0.0.1">	
 	<template_path>eqdkp_diablo</template_path>
-	<body_background>2B577C</body_background>
+	<body_background>0B0C11</body_background>
 	<body_link>C5E5FF</body_link>
 	<body_link_style>none</body_link_style>
 	<body_hlink>EEEEEE</body_hlink>
@@ -33,7 +33,9 @@
 	<input_border_style>solid</input_border_style>
 	<attendees_columns>6</attendees_columns>
 	<logo_position>center</logo_position>
-	<background_img>templates/eqdkp_diablo/images/background.jpg</background_img>
+	<background_type>0</background_type>
+	<background_pos>normal</background_pos>
+	<background_img></background_img>
 	<css_file></css_file>
 	<use_db_vars>1</use_db_vars>
 	<portal_width></portal_width>
