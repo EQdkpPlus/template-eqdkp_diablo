@@ -1325,20 +1325,18 @@ div.pagination li {
 
 div.pagination ul li > a, div.pagination ul li > span{
 	float: left;
-	border-color: #DDDDDD;
+	border-color: #4E4949;
 	border-image: none;
 	border-style: solid;
 	border-width: 1px 1px 1px 1px;
 	text-decoration: none;
 	margin-left: -1px;
-	background-color: #fff;
 	padding: 4px 12px;
 	line-height: 20px;
 }
 
 div.pagination ul li.active > a {
-	background-color: #F7F7F9;
-	color: #999999;
+	color: #7D7D7D;
 	cursor: default;
 }
 
@@ -1358,8 +1356,7 @@ div.pagination ul li:last-child > a{
 }
 
 .pagination li > a:hover {
-	background-color: #f7f7f9;
-	color: #000;
+	background-color: #7E231E;
 }
 
 .pagination .arrow-right a i{
@@ -1394,18 +1391,18 @@ div.pagination {
 
 .articleSitemap li, .categoryChildSitemap li {
 	padding: 6px 12px;
-	border-bottom: 1px solid #DDDDDD;
+	display: inline-block;
 }
 
 .articleSitemap li:last-child, .categoryChildSitemap li:last-child {
 	border: none;
-	border-bottom-right-radius: 4px;
-	border-bottom-left-radius: 4px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
 }
 
 .articleSitemap li:first-child, .categoryChildSitemap li:first-child {
-	border-top-right-radius: 4px;
-	border-top-left-radius: 4px;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
 }
 
 .articleSitemap li.active {
@@ -1418,12 +1415,8 @@ div.pagination {
 }
 
 .articleSitemap li:hover, .categoryChildSitemap li:hover {
-	background-color: #F7F7F9;
+	background-color: #7E231E;
 	cursor: default;
-}
-
-.articleSitemap li:hover a, .categoryChildSitemap li:hover a {
-	color: #000;
 }
 
 hr#system-readmore {
@@ -3865,7 +3858,20 @@ background: none;
 	border-radius: 0;
 }
 
-.chatMessage { color: #A18E73; }
+.chatBigContainer { border: 1px solid #4E4949; }
+.chatBigContainer .chatUsername { padding: 8px 2px 0 2px; }
+.chatBigContainer .chatTime { padding: 2px 8px 0 2px; }
+
+.mine .chatUsername { padding: 2px 0px 4px 8px; }
+.mine .chatTime { padding: 2px 2px 4px 0; }
+
+.chatMessage, .mine .chatMessage {
+	color: #A18E73;
+	background: none repeat scroll 0% 0% #27100E;
+	border: 1px solid #6E6E6E;
+}
+.chatMessage::after, .mine .chatMessage::after { border-color: transparent #27100E; }
+
 .chatPost { border-top: 1px solid #6B6B6B; }
 
 .chatOnlineList .hand:hover { color: #E3DBD4; }
