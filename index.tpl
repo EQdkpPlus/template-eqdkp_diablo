@@ -313,7 +313,7 @@
 							<!-- IF S_MYCHARS_POINTS and U_CHARACTERS != "" -->
 								<li class="hiddenSmartphone">
 									<div class="mychars-points-tooltip-container">
-									<a class="mychars-points-tooltip-trigger"><i class="fa fa-trophy fa-lg"></i> <span class="mychars-points-target"></span></a>
+									<a class="mychars-points-tooltip-trigger tooltip-trigger" data-tooltip="mychars-points-tooltip"><i class="fa fa-trophy fa-lg"></i> <span class="mychars-points-target"></span></a>
 									<ul class="dropdown-menu mychars-points-tooltip" role="menu" id="mychars-points-tooltip"><li>
 										<table>
 										<!-- BEGIN mychars_points -->
