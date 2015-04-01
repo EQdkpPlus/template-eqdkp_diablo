@@ -3009,8 +3009,8 @@ table.leaderboard tbody tr td table.borderless tbody tr td {
 .tags a{
 	margin-left:20px;
 	padding:0 10px 0 12px;
-	background:#4E7FA8;
-	color:#fff;
+	background:#0B0C11 ;
+	color:#ECC08C;
 	text-decoration:none;
 	-moz-border-radius-bottomright:4px;
 	-webkit-border-bottom-right-radius:4px;
@@ -3028,7 +3028,7 @@ table.leaderboard tbody tr td table.borderless tbody tr td {
 	left:-12px;
 	width:0;
 	height:0;
-	border-color:transparent #4E7FA8 transparent transparent;
+	border-color:transparent #0B0C11 transparent transparent;
 	border-style:solid;
 	border-width:12px 12px 12px 0;
 }
@@ -3052,9 +3052,9 @@ table.leaderboard tbody tr td table.borderless tbody tr td {
 	-webkit-border-radius:2px;
 	border-radius:2px;
 	background:#fff;
-	-moz-box-shadow:-1px -1px 2px #004977;
-	-webkit-box-shadow:-1px -1px 2px #004977;
-	box-shadow:-1px -1px 2px #004977;
+	-moz-box-shadow:-1px -1px 2px #FF0000;
+	-webkit-box-shadow:-1px -1px 2px #FF0000;
+	box-shadow:-1px -1px 2px #FF0000;
 }
 
 .ui-stars-star a, .ui-stars-cancel a {
@@ -3939,8 +3939,8 @@ background: none;
 
 .chatNewPost { background-color: #480B0B; }
 .noNewPost {
-    animation: 1s ease 0s normal none 1 running noNewPost;
-    background-color: #320B0B;
+	animation: 1s ease 0s normal none 1 running noNewPost;
+	background-color: #320B0B;
 }
 
 .chatOnlineList .hand:hover { color: #E3DBD4; }
@@ -3951,12 +3951,14 @@ background: none;
 }
 
 @-webkit-keyframes blinkingHeader {
-    0% {box-shadow: 1px 1px 15px #FF0000 inset;}
-    50% {box-shadow: 1px 1px 15px #000 inset;}
-    100% {box-shadow: 1px 1px 15px #FF0000 inset;}
+	0% {box-shadow: 1px 1px 15px #FF0000 inset;}
+	50% {box-shadow: 1px 1px 15px #000 inset;}
+	100% {box-shadow: 1px 1px 15px #FF0000 inset;}
 }
 @keyframes blinkingHeader {
-    0% {box-shadow: 1px 1px 15px #FF0000 inset;}
-    50% {box-shadow: 1px 1px 15px #000 inset;}
-    100% {box-shadow: 1px 1px 15px #FF0000 inset;}
+	0% {box-shadow: 1px 1px 15px #FF0000 inset;}
+	50% {box-shadow: 1px 1px 15px #000 inset;}
+	100% {box-shadow: 1px 1px 15px #FF0000 inset;}
 }
+/* JQPlot Adjustmentss */
+.jqplot-highlighter-tooltip, .jqplot-canvasOverlay-tooltip{color: rgb(0, 0, 0);}
