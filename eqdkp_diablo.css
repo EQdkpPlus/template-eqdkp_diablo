@@ -3817,38 +3817,73 @@ font-size: 0.8em;
 }
 
 li.prio_0 {
-border-left: 4px solid #468847;
+	border-left: 4px solid #468847;
 }
 
 li.prio_1 {
-border-left: 4px solid #F89406;
+	border-left: 4px solid #F89406;
 }
 
 li.prio_2 {
-border-left: 4px solid #B94A48;
+	border-left: 4px solid #B94A48;
+}
+
+button.thirdpartylogin.facebook {
+	background: #3b5998;
+	color: #fff;
+	border-radius: 3px;
+	border-color: transparent;
+}
+
+button.thirdpartylogin.google {
+	background: #dd4b39;
+	color: #fff;
+	border-radius: 3px;
+	border-color: transparent;
+}
+
+button.thirdpartylogin.battlenet {
+	background: #0e98d8;
+	color: #fff;
+	border-radius: 3px;
+	border-color: transparent;
+}
+
+button.thirdpartylogin.persona {
+	background: #448bc9;
+	color: #fff;
+	border-radius: 3px;
+	border-color: transparent;
+}
+
+button.thirdpartylogin.openid {
+	background: #d5d5d5;
+	color: #000;
+	border-radius: 3px;
+	border-color: transparent;
 }
 
 .notification-bubble-green.filtered {
-background-color: #ddd !important;
-border: 1px solid #468847 !important;
+	background-color: #ddd !important;
+	border: 1px solid #468847 !important;
 }
 
 .notification-bubble-yellow.filtered {
-background-color: #ddd !important;
-border: 1px solid #F89406 !important;
+	background-color: #ddd !important;
+	border: 1px solid #F89406 !important;
 }
 
 .notification-bubble-red.filtered {
-background-color: #ddd !important;
-border: 1px solid #B94A48 !important;
+	background-color: #ddd !important;
+	border: 1px solid #B94A48 !important;
 }
 
 .notification_list li{
-padding-bottom: 6px;
-padding-top: 6px;
-padding-left: 4px;
-padding-right: 4px;
-border-bottom: 1px solid rgba(204, 204, 204, 0.3);
+	padding-bottom: 6px;
+	padding-top: 6px;
+	padding-left: 4px;
+	padding-right: 4px;
+	border-bottom: 1px solid rgba(204, 204, 204, 0.3);
 }
 
 .notification_list li.unread:hover {
