@@ -39,60 +39,34 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
 
- /* icon styles */
-.icon-grey{
-	color:#6E6E6E;
-}
+/* LESS VARS */
+//@styleLightenFontColor : lighten(saturate(@eqdkpBodyFontColor, 58), 10); // build #EBB16C - but we should generate it from @eqdkpContentFontColor
 
-.icon-sm1{
-	font-size:0.8em;
-}
 
-.icon-sm2{
-	font-size:0.6em;
-}
-
-.icon-sm3{
-	font-size:0.5em;
-}
-
-.icon-red {
-	color: red;
-}
+/* icon styles */
+.icon-grey { color:#6E6E6E; }
+.icon-sm1 { font-size:0.8em; }
+.icon-sm2 { font-size:0.6em; }
+.icon-sm3 { font-size:0.5em; }
+.icon-red { color: red; }
 
 /* body */
-html {
-	min-height: 100%;
-}
+html { min-height: 100%; }
 body {
-	background: url('TEMPLATE_BACKGROUND') no-repeat T_BACKGROUND_POSITION 50% top T_BODY_BACKGROUND;
-	font-size: 13px;
-	font-family: Tahoma,Arial,Verdana,sans-serif;
-	color: #A18E73;
+	background: url('@{eqdkpBackgroundImage}') no-repeat @eqdkpBackgroundImagePosition 50% top @eqdkpBodyBackgroundColor;
+	font-size: @eqdkpBodyFontSize;
+	font-family: @eqdkpBodyFontFamily;
+	color: @eqdkpBodyFontColor;
 	text-align: center;
 }
 
@@ -108,34 +82,20 @@ h1, h2, h3 {
 	padding-bottom: 5px;
 	border-bottom: 1px solid #6E6E6E;
 	margin-top: 5px;
-color: #EBB16C;
-}
-
-h1 {
-	font-size: 20px;
-}
-
-h2 {
-	font-size: 18px;
-}
-
-h2 > a, h2 > a:link, h2 > a:active, h2 > a:visited {
 	color: #EBB16C;
 }
-h2:hover > a, h2:hover > a:link, h2:hover > a:active, h2:hover > a:visited {
-	color: #ECC08C;
-}
 
-h3 {
-	font-size: 14px;
-	border-bottom: none;
-	margin-bottom: 5px;
-}
+h1 { font-size: 20px; }
+h2 { font-size: 18px; }
+h3 { font-size: 14px; margin-bottom: 5px; border-bottom: none; }
+
+h2 > a, h2 > a:link, h2 > a:active, h2 > a:visited { color: #EBB16C; }
+h2:hover > a, h2:hover > a:link, h2:hover > a:active, h2:hover > a:visited { color: #ECC08C; }
 
 
 /* personal area */
 #personalArea {
-	background: url('TEMPLATE_IMAGE_PATH/nav_bg.png') repeat scroll 0% 0% #190A09;
+	background: url('@{eqdkpTemplateImagePath}nav_bg.png') repeat scroll 0% 0% #190A09;
 	min-height: 39px;
 	color: #969696;
 	font: 13px 'Trebuchet MS',Arial,sans-serif;
@@ -220,29 +180,22 @@ color: #7D7C7C;
 /* footer */
 #footer {
 	text-align: center;
-	color: #9F9F9F;
+	color: @eqdkpBodyLinkColor;
 	font-family:'Trebuchet MS',Arial,sans-serif;
 	font-size: 12px;
 	margin-top: 20px;
 }
-
-.copyright {
-	color: #9F9F9F;
-}
+.copyright { color: @eqdkpBodyLinkColor; }
 #footer a, copyright a {
-	color: #9F9F9F;
+	color: @eqdkpBodyLinkColor;
 	text-decoration:none;
 }
 #footer a:hover, copyright a:hover, #impressum:hover {
-	color: #E3DBD4;
+	color: @eqdkpBodyLinkColorHover;
 	text-decoration:underline;
 }
-#dialog_disclaimer{
-	display: none;
-}
-#impressum{
-	margin: 0px 0px 10px 0px;
-}
+#dialog_disclaimer { display: none; }
+#impressum { margin: 0px 0px 10px 0px; }
 
 /* General Portal Layout */
 .portal .column {
@@ -285,7 +238,7 @@ color: #7D7C7C;
 }
 
 .fixed_width #wrapper {
-	min-width: T_PORTAL_WIDTH !important;
+	min-width: @eqdkpPortalWidth !important;
 }
 
 #wrapper {
@@ -297,15 +250,15 @@ color: #7D7C7C;
 }
 
 .fixed_width #wrapper .portal .second {
-	width: T_PORTAL_WIDTH_WITHOUT_BOTH_COLUMNS !important;
+	width: @eqdkpPortalWidthWithoutBothColumns !important;
 }
 
 .fixed_width #wrapper .portal .second.no_third_column {
-	width: T_PORTAL_WIDTH_WITHOUT_LEFT_COLUMN !important;
+	width: @eqdkpPortalWidthWithoutLeftColumn !important;
 }
 
 .fixed_width #personalAreaInner {
-	width: T_PORTAL_WIDTH !important;
+	width: @eqdkpPortalWidth !important;
 	margin: auto;
 }
 
@@ -370,7 +323,7 @@ filter: dropshadow(color=#FB6C03, offx=1, offy=1);
 #titles h2 {
 	padding-left:40px;
 	font-size: 20px;
-color: #CB822B;
+	color: #CB822B;
 	border: none;
 }
 
@@ -380,13 +333,13 @@ color: #CB822B;
 
 /* Content Container */
 #contentContainer {
-background-color: #190A09;
-	border-radius: 6px;
 	margin-left: 40px;
 	margin-right: 40px;
-border-left: 1px solid #27100E;
-border-right: 1px solid #27100E;
-box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+	background-color: #190A09;
+	border-left: 1px solid #27100E;
+	border-right: 1px solid #27100E;
+	border-radius: 6px;
+	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
 }
 
 #contentBody {
@@ -394,8 +347,8 @@ box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
 	margin: 5px;
 	padding: 1px;
 	margin-bottom: 14px;
-border: 1px solid #551212;
-background-image: -moz-linear-gradient(center top , #390D0D, #250808);
+	border: 1px solid #551212;
+	background-image: -moz-linear-gradient(center top , #390D0D, #250808);
 }
 
 #contentBody2 {
@@ -410,7 +363,7 @@ background-image: -moz-linear-gradient(center top , #390D0D, #250808);
 }
 
 #contentBody2 tbody {
-	background: url('TEMPLATE_IMAGE_PATH/diablo-bg.jpg') no-repeat scroll center 33px #190A09;
+	background: url('@{eqdkpTemplateImagePath}diablo-bg.jpg') no-repeat scroll center 33px #190A09;
 background-size: 100%;
 }
 
@@ -461,7 +414,7 @@ color: #EBB16C;
 	font-family: 'Trebuchet MS',Arial,sans-serif;
 	padding: 5px 2px 5px 2px;
 	font-size: 14px;
-background: url('TEMPLATE_IMAGE_PATH/headerbg.png') no-repeat scroll left top #4E1212;
+background: url('@{eqdkpTemplateImagePath}headerbg.png') no-repeat scroll left top #4E1212;
 box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7) inset;
 font-weight: bold;
 border: 1px solid #411414;
@@ -575,13 +528,13 @@ a:hover {
 
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
 	border-radius: 4px 4px 4px 4px;
-color: #7D7C7C;
+	color: @eqdkpInputFontColor;
 	font-size: 13px;
 	line-height: 20px;
 	padding: 4px 6px;
 	vertical-align: middle;
-background-color: #060303;
-border: 1px solid #591916;
+	background-color: @eqdkpInputBackgroundColor;
+	border: 1px solid @eqdkpInputBorderColor;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
 	transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
 	font-family: Tahoma,Arial,Verdana,sans-serif;
@@ -589,10 +542,11 @@ border: 1px solid #591916;
 }
 
 select:focus, select:hover, textarea:focus, textarea:hover, input:focus, input:hover {
-	border-color: rgba(236, 82, 82, 0.8);
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(236, 82, 82, 0.6);
+	color: @eqdkpInputFontColorActive;
+	background-color: @eqdkpInputBackgroundColorActive;
+	border-color: @eqdkpInputBorderColorActive;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px fadeout(@eqdkpInputBorderColorActive, 20);
 	outline: 0 none;
-color: #ABABAB;
 }
 
 input[type=radio], input[type=checkbox]{
@@ -878,19 +832,19 @@ a.blue, a.blue:hover, a.button, a.button:hover {
 }
 
 .blue, .button, input[type="submit"], input[type="button"], input[type="reset"], button {
-color: #EDDAA8;
-	border: solid 1px #0076a3;
-background-color: #690A06;
-background-image: -moz-linear-gradient(center top , #690A06, #390503);
-text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
-border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	color: @eqdkpButtonFontColor;
+	border: solid 1px @eqdkpButtonBorderColor;
+	background-color: @eqdkpButtonBackgroundColor;
+	background-image: -moz-linear-gradient(center top , @eqdkpButtonBackgroundColor, darken(@eqdkpButtonBackgroundColor, 10));
+	text-shadow: 0px -1px 0px fadein(@eqdkpButtonBorderColor, 15);
+	border-color: @eqdkpButtonBorderColor @eqdkpButtonBorderColor fadein(@eqdkpButtonBorderColor, 15);
 }
 .blue:hover, .button:hover, input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover, button:not(.ui-widget):hover {
-	color: #EDDAA8;
-background-color: #690A06;
-background-image: -moz-linear-gradient(center top , #901B16, #690A06);
-text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
-border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	color: @eqdkpButtonFontColorHover;
+	background-color: @eqdkpButtonBackgroundColorHover;
+	background-image: -moz-linear-gradient(center top , lighten(@eqdkpButtonBackgroundColorHover, 9), @eqdkpButtonBackgroundColorHover);
+	text-shadow: 0px -1px 0px fadein(@eqdkpButtonBorderColor, 15);
+	border-color: @eqdkpButtonBorderColorHover @eqdkpButtonBorderColorHover fadein(@eqdkpButtonBorderColorHover, 15);
 }
 
 /* green */
@@ -1010,7 +964,7 @@ border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 	text-align:left;
 	font-family:'Trebuchet MS',Arial,sans-serif;
 color: #EBB16C;
-background: url('TEMPLATE_IMAGE_PATH/table_bg_tile.png') repeat scroll 0% 0% #330B0B;
+background: url('@{eqdkpTemplateImagePath}table_bg_tile.png') repeat scroll 0% 0% #330B0B;
 }
 
 #contentBody th, #contentBody td {
@@ -1271,7 +1225,7 @@ font-size: 20px;
 font-weight: bold;
 margin-bottom: 10px;
 padding-bottom: 5px;
-background: url('TEMPLATE_IMAGE_PATH/table_bg_tile.png') repeat scroll 0% 0% #330B0B !important;
+background: url('@{eqdkpTemplateImagePath}table_bg_tile.png') repeat scroll 0% 0% #330B0B !important;
 }
 .ui-tabs ul.ui-tabs-nav {
 	background: none !important;
@@ -1651,7 +1605,7 @@ border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 
 /* general: superfish - admin menu style */
 #mainmenu {
-	background: url('TEMPLATE_IMAGE_PATH/nav_bg.png') repeat scroll 0% 0% #190A09;
+	background: url('@{eqdkpTemplateImagePath}nav_bg.png') repeat scroll 0% 0% #190A09;
 	border-left: 1px solid #27100E;
 	border-right: 1px solid #27100E;
 	border-top-right-radius: 5px;
@@ -1680,7 +1634,7 @@ border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
 
 .sf-admin li , .mainmenu li{
-background: url('TEMPLATE_IMAGE_PATH/nav_div.png') no-repeat scroll right top transparent;
+background: url('@{eqdkpTemplateImagePath}nav_div.png') no-repeat scroll right top transparent;
 }
 .sf-admin li li, .mainmenu li li {
 background: #270E09;
@@ -2180,7 +2134,7 @@ fieldset.raidcal_infos dt, fieldset.moderation_panel dt {
 }
 
 .default-avatar{
-	background: url(EQDKP_IMAGE_PATHsvg/avatar-default.svg) no-repeat;
+	background: url('@{eqdkpTemplateImagePath}avatar-default.svg') no-repeat;
 	background-size: contain;
 	display:inline-block;
 	width: 24px;
@@ -2546,7 +2500,7 @@ td.hiddenSmartphone, th.hiddenSmartphone {
 }
 
 .sortable li.mjs-nestedSortable-branch div, .sortable li.mjs-nestedSortable-leaf div {
-    background: url('TEMPLATE_IMAGE_PATH/table_bg_tile.png') repeat scroll 0% 0% #190A09;
+    background: url('@{eqdkpTemplateImagePath}table_bg_tile.png') repeat scroll 0% 0% #190A09;
     border-color: #757575;
     color: #CF7F20;
 }
@@ -3955,7 +3909,7 @@ background: none;
 .chatWindowHeader, .chatWindowHeader2, .chatWindowHeaderInactive {
 	color: #EBB16C;
 	box-shadow: 1px 1px 15px #000 inset;
-	background: url("TEMPLATE_IMAGE_PATH/headerbg.png") no-repeat scroll left top #4E1212;
+	background: url('@{eqdkpTemplateImagePath}headerbg.png') no-repeat scroll left top #4E1212;
 	text-shadow: 1px 1px 10px #000;
 }
 .active .chatWindowHeader, #chatMenu .chatWindowHeader2 {
