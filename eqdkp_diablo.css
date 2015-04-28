@@ -3934,12 +3934,13 @@ background: none;
 .add_item_container { background-position: center 0px; }
 
 
-/*****************************************/
-/* PLUGIN and MODULE adjustments         */
-/*****************************************/
-/* Timline Plugin */
-.timeline-years { color: #EBB16C !important; }
-.timeline-dateblock:before { background: #273D81 !important; }
+/*****************************************
+ * PLUGIN and MODULE adjustments         *
+ *****************************************/
+/* Shoutbox */
+.sb_horizontal .sb_content_container { background-color: #27100E !important; border-color: #6E6E6E !important; }
+.sb_horizontal .sb_with_avatar.sb_content_container:before { border-color: transparent #6E6E6E !important; }
+.sb_horizontal .sb_with_avatar.sb_content_container:after { border-color: transparent #27100E !important; }
 
 /* Chat Plugin */
 .chatWindowMin {
