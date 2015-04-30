@@ -3422,7 +3422,12 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	.responsive.simple-header.mobile .floatRight {
 		float: none;
 	}
-
+	
+	.responsive div.leaderboard > div.floatLeft {
+		float: none;
+		width: 100% !important;
+	}
+	
 	/* Mobile Navigation */
 	.nav-mobile {
 		width: 100%;
@@ -3888,6 +3893,14 @@ background: none;
 
 .add_item_container { background-position: center 0px; }
 
+/* Leaderboard */
+.leaderboard {
+	display: flex;
+	flex-wrap: wrap;
+}
+.leaderboard > div > div{
+	padding: 6px;
+}
 
 /*****************************************
  * PLUGIN and MODULE adjustments         *
