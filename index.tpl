@@ -291,7 +291,7 @@
 						<ul>
 							<li>
 								<div class="user-tooltip-container">
-									<a href="{EQDKP_CONTROLLER_PATH}Settings{SEO_EXTENSION}{SID}" class="user-tooltip-trigger tooltip-trigger" data-tooltip="user-tooltip"><span class="user-avatar user-avatar-border user-avatar-smallest"><img src="{USER_AVATAR}" alt="{USER_NAME}"/></span> <span class="hiddenSmartphone">{USER_NAME}</span></a>
+									<a href="{EQDKP_CONTROLLER_PATH}Settings{SEO_EXTENSION}{SID}" class="user-tooltip-trigger tooltip-trigger" data-tooltip="user-tooltip"><span class="user-avatar user-avatar-border user-avatar-smallest"><img src="{USER_AVATAR}" alt="{USER_NAME}"/></span> <span class="hiddenSmartphone">{USER_NAME}<!-- IF USER_IS_AWAY --> <i class="fa fa-suitcase fa-lg"></i><!-- ENDIF --></span></a>
 									<ul class="dropdown-menu user-tooltip" role="menu" id="user-tooltip">
 										<li><a href="{U_USER_PROFILE}">
 												<div class="user-tooltip-avatar">
@@ -307,6 +307,9 @@
 										<!-- BEGIN user_tooltip_addition -->
 										<li class="{user_tooltip_addition.CLASS}">{user_tooltip_addition.TEXT}</li>
 										<!-- END user_tooltip_addition -->
+										<!-- IF USER_IS_AWAY -->
+										<li class="user_tooltip_awaymode"><a href="{EQDKP_CONTROLLER_PATH}Settings{SEO_EXTENSION}{SID}#fragment-calendar"><i class="fa fa-suitcase fa-lg"></i> {L_calendar_user_is_away}</a></li>
+										<!-- ENDIF -->
 										<li><a href="{EQDKP_CONTROLLER_PATH}Settings{SEO_EXTENSION}{SID}"><i class="fa fa-cog fa-lg"></i> {L_settings}</a></li>
 										<li><a href="{U_LOGOUT}"><i class="fa fa-sign-out fa-lg"></i> {L_logout}</a></li>
 									</ul>
@@ -412,7 +415,7 @@
 					<!-- LISTENER logo_container -->
 					<div class="clear noheight">&nbsp;</div>
 				</div>
-				{PORTAL_BLOCK1}
+				<div class="portal_block1">{PORTAL_BLOCK1}</div>
 				<!-- LISTENER header_bottom -->
 			</div> <!-- close header-->
 		</header>
@@ -477,12 +480,17 @@
 							<!-- IF S_SHOW_COOKIE_HINT -->
 							<div class="infobox infobox-large infobox-blue clearfix">
 								<i class="fa-info-circle fa pull-left fa-2x"></i> {COOKIE_HINT}
+                                <i class="fa-times fa pull-right hand" onclick="$(this).parent().hide()"></i>
 							</div>
 							<!-- ENDIF -->
+                            
 							<!-- BEGIN global_warnings -->
 							<header>
 								<div class="infobox infobox-large infobox-{global_warnings.CLASS} clearfix">
 									<i class="{global_warnings.ICON} fa-4x pull-left"></i> {global_warnings.MESSAGE}
+                                    <!-- IF global_warnings.S_DISMISS -->
+									<i class="fa-times fa pull-right hand" onclick="$(this).parent().hide()"></i>
+									<!-- ENDIF -->
 								</div>
 							</header>
 							<!-- END global_warnings -->
@@ -567,7 +575,7 @@
 
 		<footer id="footer">
 				<!-- LISTENER footer_top -->
-				{PORTAL_BLOCK2}
+				<div class="portal_block2">{PORTAL_BLOCK2}</div>
 				{EQDKP_PLUS_COPYRIGHT}
 				<!-- LISTENER footer_bottom -->
 		</footer><!-- close footer -->

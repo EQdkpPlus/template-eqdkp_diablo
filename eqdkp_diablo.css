@@ -2152,6 +2152,9 @@ fieldset.settings.floatRight.raid input[type="text"]{
 	vertical-align:middle;
 	margin:0;
 }
+.attendee_awaymode{
+	border-color: red;
+}
 #bottommenu_chars{
 	height: 70px;
 	clear: both;
@@ -2717,6 +2720,9 @@ td.hiddenSmartphone, th.hiddenSmartphone {
 	border-radius: 4px 4px 4px 4px;
 	background-color: #FFFFFF;
 }
+.awaytt_row{
+	margin: 8px 0px;
+}
 
 /* Toolbar */
 .toolbar {
@@ -2864,7 +2870,7 @@ a.tool-item i {
 	color: #666;
 }
 
-#personalArea .dropdown-menu li > a, #contentFooter .rss-tooltip.dropdown-menu li > a {
+#personalArea .dropdown-menu li > a, #contentFooter .rss-tooltip.dropdown-menu li > a, #personalArea .dropdown-menu li > span.nolink {
 	clear: both;
 	color: #D6D0CC;
 	display: block;
