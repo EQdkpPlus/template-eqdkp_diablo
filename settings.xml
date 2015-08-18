@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<settings styleversion="0.0.7">	
+<settings styleversion="0.0.8">	
 	<template_path>eqdkp_diablo</template_path>
 	<body_background>#0B0C11</body_background>
 	<body_link>#C5E5FF</body_link>
