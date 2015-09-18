@@ -4027,8 +4027,34 @@ background: none;
 	display: flex;
 	flex-wrap: wrap;
 }
-.leaderboard > div > div{
+.leaderboard > div > div {
 	padding: 6px;
+}
+
+/* Big Dates for Article List */
+.bigDateNumber {
+	font-size: 60px;
+    line-height: 60px;
+    margin-bottom: 10px;
+    font-weight: 100;
+	width: 100%;
+    display: block;
+}
+
+.bigDateContainer {
+	text-align: center;
+	float: left;
+	width: 100px;
+	border-right: 1px solid @eqdkpContentBorderColor;
+	margin-right: 12px;
+}
+
+.list-type2 h2 {
+	border-bottom: none;
+}
+
+.list-type2 .fa-calendar-o, .fa-comments {
+	margin-left: 10px;
 }
 
 /*****************************************
