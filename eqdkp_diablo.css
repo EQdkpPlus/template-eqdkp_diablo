@@ -1432,6 +1432,10 @@ div.pagination {
 	cursor: default;
 }
 
+.noheader .categoryChildSitemap {
+	float: none;
+}
+
 hr#system-readmore {
 	display:none;
 }
