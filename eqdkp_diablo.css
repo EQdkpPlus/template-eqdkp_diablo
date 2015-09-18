@@ -433,7 +433,7 @@ background-size: 100%;
 
 /* Portalbox */
 .portalbox {
-border: 1px solid #4E4949;
+	border: 1px solid #4E4949;
 	border-radius: 3px 3px 3px 3px;
 	margin: 5px;
 	padding: 1px;
@@ -441,20 +441,20 @@ border: 1px solid #4E4949;
 }
 
 .portalbox_head {
-color: #EBB16C;
+	color: #EBB16C;
 	font-family: 'Trebuchet MS',Arial,sans-serif;
 	padding: 5px 2px 5px 2px;
 	font-size: 14px;
-background: url('@{eqdkpTemplateImagePath}headerbg.png') no-repeat scroll left top #4E1212;
-box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7) inset;
-font-weight: bold;
-border: 1px solid #411414;
-text-shadow: 1px 1px #000;
+	background: url('@{eqdkpTemplateImagePath}headerbg.png') no-repeat scroll left top #4E1212;
+	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7) inset;
+	font-weight: bold;
+	border: 1px solid #411414;
+	text-shadow: 1px 1px #000;
 }
 
 .portalbox_content {
 	padding: 5px;
-background-color: #27100E;
+	background-color: #27100E;
 }
 
 #shoutbox_reload_button {
@@ -462,11 +462,11 @@ background-color: #27100E;
 }
 
 /* Toggle Buttons for portalbox */
+.portalbox_head .portal_fe_edit { display: none; }
+.portalbox:hover .portal_fe_edit { display: inline; }
+
 .toggle_button {
-color: #A1A1A1;
-}
-.portal_fe_edit {
-color: #A1A1A1;
+	color: #A1A1A1;
 }
 .toggle_button:before{
 	content:"\f078";
@@ -475,7 +475,6 @@ color: #A1A1A1;
 	float: right;
 	padding-right: 3px;
 }
-
 .toggle_button.active:before {
 	content:"\f077";
 	font-family: FontAwesome;
@@ -484,6 +483,7 @@ color: #A1A1A1;
 .portal_fe_edit {
 	float:right;
 	padding-right: 5px;
+	color: #A1A1A1;
 }
 
 .confirmdialog{
