@@ -18,8 +18,8 @@
 	<body_link_color_hover>rgb(227, 219, 212)</body_link_color_hover>
 	<body_link_decoration>none</body_link_decoration>
 	
-	<container_background_color></container_background_color>
-	<container_border_color></container_border_color>
+	<container_background_color>rgb(25, 10, 9)</container_background_color>
+	<container_border_color>rgb(39, 16, 14)</container_border_color>
 	<content_background_color></content_background_color>
 	<content_font_color></content_font_color>
 	<content_font_color_headings></content_font_color_headings>
