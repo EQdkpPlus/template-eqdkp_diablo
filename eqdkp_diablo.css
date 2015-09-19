@@ -71,7 +71,7 @@ body {
 }
 
 body.simple-header {
-	background: transparent;
+	background: @eqdkpContainerBackgroundColor;
 	margin: 5px;
 }
 
@@ -333,9 +333,9 @@ filter: dropshadow(color=#FB6C03, offx=1, offy=1);
 #contentContainer {
 	margin-left: 40px;
 	margin-right: 40px;
-	background-color: #190A09;
-	border-left: 1px solid #27100E;
-	border-right: 1px solid #27100E;
+	background-color: @eqdkpContainerBackgroundColor;
+	border-left: 1px solid @eqdkpContainerBorderColor;
+	border-right: 1px solid @eqdkpContainerBorderColor;
 	border-radius: 6px;
 	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
 }
@@ -1951,8 +1951,8 @@ color: #D59535 !important;
 .manage_menues_block .toggle_button {
 	font-family: 'Trebuchet MS',Arial,sans-serif;
 	font-weight: bold;
-	border-bottom: 1px solid #6E6E6E;
-	background-color: #EAEAEA;
+	border-bottom: 1px solid @eqdkpContainerBorderColor;
+	background-color: @eqdkpContainerBackgroundColor;
 	padding: 3px;
 }
 
