@@ -95,25 +95,23 @@ h2:hover > a, h2:hover > a:link, h2:hover > a:active, h2:hover > a:visited { col
 
 /* personal area */
 #personalArea {
-	background: url('@{eqdkpTemplateImagePath}nav_bg.png') repeat scroll 0% 0% #190A09;
+	background: url('@{eqdkpTemplateImagePath}nav_bg.png') repeat scroll 0% 0% @eqdkpUserareaBackgroundColor;
 	min-height: 39px;
-	color: #969696;
+	color: @eqdkpUserareaFontColor;
 	font: 13px 'Trebuchet MS',Arial,sans-serif;
 	padding-left: 40px;
 	padding-right: 40px;
-	-moz-box-shadow: 10px 10px 5px #888;
-	-webkit-box-shadow: 10px 10px 5px #888;
 	box-shadow: 0px 2px 3px #000;
 	margin-bottom: 10px;
 	text-align:left;
 }
 
 #personalArea a {
-	color: #989898;
+	color: @eqdkpUserareaLinkColor;
 	text-decoration:none;
 }
 #personalArea a:hover {
-	color: #C6C4C4;
+	color: @eqdkpUserareaLinkColorHover;
 	text-decoration:none;
 }
 #personalArea a:hover i {
