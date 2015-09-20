@@ -21,11 +21,11 @@
 	<container_background_color>rgb(25, 10, 9)</container_background_color>
 	<container_border_color>rgb(39, 16, 14)</container_border_color>
 	<content_background_color></content_background_color>
-	<content_font_color></content_font_color>
-	<content_font_color_headings></content_font_color_headings>
+	<!-- #9F9F9F --><content_font_color>rgb(159, 159, 159)</content_font_color>
+	<content_font_color_headings>rgb(235, 177, 108)</content_font_color_headings>
 	<content_link_color></content_link_color>
 	<content_link_color_hover></content_link_color_hover>
-	<content_border_color></content_border_color>
+	<!-- #6E6E6E --><content_border_color>rgb(110, 110, 110)</content_border_color>
 	<content_accent_color></content_accent_color>
 	<content_contrast_color></content_contrast_color>
 	<content_contrast_background_color></content_contrast_background_color>

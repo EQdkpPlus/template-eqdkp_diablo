@@ -80,9 +80,9 @@ h1, h2, h3 {
 	font-weight: bold;
 	margin-bottom: 10px;
 	padding-bottom: 5px;
-	border-bottom: 1px solid #6E6E6E;
+	border-bottom: 1px solid @eqdkpContentBorderColor;
 	margin-top: 5px;
-	color: #EBB16C;
+	color: @eqdkpContentFontColorHeadings;
 }
 
 h1 { font-size: 20px; }
@@ -345,7 +345,7 @@ filter: dropshadow(color=#FB6C03, offx=1, offy=1);
 	margin: 5px;
 	padding: 1px;
 	margin-bottom: 14px;
-	border: 1px solid #551212;
+	border: 1px solid darken(@eqdkpContentBorderColor, 10) - #004343;
 	background-image: -moz-linear-gradient(center top , #390D0D, #250808);
 }
 
@@ -431,7 +431,7 @@ background-size: 100%;
 
 /* Portalbox */
 .portalbox {
-	border: 1px solid #4E4949;
+	border: 1px solid darken(@eqdkpContentBorderColor, 12.5) - #000505;
 	border-radius: 3px 3px 3px 3px;
 	margin: 5px;
 	padding: 1px;
@@ -446,7 +446,7 @@ background-size: 100%;
 	background: url('@{eqdkpTemplateImagePath}headerbg.png') no-repeat scroll left top #4E1212;
 	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7) inset;
 	font-weight: bold;
-	border: 1px solid #411414;
+	border: 1px solid darken(@eqdkpContentBorderColor, 16.5) - #033030;
 	text-shadow: 1px 1px #000;
 }
 
@@ -1050,7 +1050,7 @@ background: url('@{eqdkpTemplateImagePath}table_bg_tile.png') repeat scroll 0% 0
 }
 
 .contentSubheader {
-	color: #9F9F9F;
+	color: @eqdkpContentFontColor;
 	margin-bottom: 10px;
 	margin-top: 4px;
 }
@@ -1085,7 +1085,7 @@ background: url('@{eqdkpTemplateImagePath}table_bg_tile.png') repeat scroll 0% 0
 /* Fieldsets */
 
 fieldset.settings legend {
-	border-bottom: 1px solid #6E6E6E;
+	border-bottom: 1px solid @eqdkpContentBorderColor;
 	font-family: 'Trebuchet MS',Arial,sans-serif;
 	font-size: 18px;
 	font-weight: bold;
@@ -1110,14 +1110,14 @@ fieldset.settings dt {
 	width: 55%;
 	text-align: left;
 	border: none;
-	border-right: 1px solid #6E6E6E;
+	border-right: 1px solid @eqdkpContentBorderColor;
 	padding-top: 3px;
 }
 fieldset.settings dd {
 	margin: 0 0 0 55%;
 	padding: 0 0 0 5px;
 	border: none;
-	border-left: 1px solid #6E6E6E;
+	border-left: 1px solid @eqdkpContentBorderColor;
 	vertical-align: middle;
 	font-size: 1.00em;
 	text-align: left;
@@ -1153,10 +1153,10 @@ fieldset.settings dl:after {
 }
 
 fieldset.settings dl:hover dt{
-	border-right: 1px solid #000;
+	border-right: 1px solid darken(@eqdkpContentBorderColor, 45);
 }
 fieldset.settings dl:hover dd{
-	border-left: 1px solid #000;
+	border-left: 1px solid darken(@eqdkpContentBorderColor, 45);
 }
 fieldset.settings dt label {
 	font-size: 1.00em;
@@ -1168,7 +1168,7 @@ fieldset.settings dd label {
 	margin: 0 10px 0 0;
 }
 fieldset.settings dt span {
-	color: #666;
+	color: darken(@eqdkpContentFontColor, 22.5);
 }
 
 img {
@@ -1439,12 +1439,12 @@ hr#system-readmore {
 }
 
 ul.breamcrumb {
-background: linear-gradient(to bottom, #390E0E 0px, #2E0B0B 100%) repeat scroll 0% 0% transparent;
-	color: #9F9F9F;
+	background: linear-gradient(to bottom, #390E0E 0px, #2E0B0B 100%) repeat scroll 0% 0% transparent;
+	color: @eqdkpContentFontColor;
 	font-size: 13px;
 	border-width: 1px;
 	border-style: solid;
-	border-color: #4E4949;
+	border-color: darken(@eqdkpContentBorderColor, 14.5) + #050000;
 	border-radius: 3px 3px 3px 3px;
 	overflow: hidden;
 	width: 100%;
@@ -1878,7 +1878,7 @@ color: #D59535 !important;
 	background: #3C3C3C;
 	margin:0;
 	padding:5px;
-	border:1px solid #777;
+	border:1px solid lighten(@eqdkpContentBorderColor, 3.5);
 	height:200px;
 	width:auto;
 	overflow: auto;
@@ -1934,18 +1934,30 @@ color: #D59535 !important;
 
 /* ACP: manage menues */
 .manage_menues_block {
-	list-style-type: none; padding: 3px; margin:6px; border:1px dashed #666; min-width:180px;
+	list-style-type: none;
+	padding: 3px;
+	margin: 6px;
+	border: 1px dashed darken(@eqdkpContentBorderColor, 3);
+	min-width: 180px;
 }
 .manage_menues_block2 {
-	list-style-type: none; padding: 3px; margin:6px; border:3px dashed #666; min-width:180px;
+	list-style-type: none;
+	padding: 3px;
+	margin: 6px;
+	border: 3px dashed darken(@eqdkpContentBorderColor, 3);
+	min-width: 180px;
 }
 .manage_menues_block ul {
-	margin:0px;
-	padding:0px;
+	margin: 0px;
+	padding: 0px;
 }
 .manage_menues_block li, .manage_menues_block2 li {
-	list-style-type: none; padding: 5px;
-	margin:5px; background-color:#F5F5F5; cursor:pointer; color:#666;
+	list-style-type: none;
+	padding: 5px;
+	margin: 5px;
+	background-color: #F5F5F5;
+	cursor: pointer;
+	color: darken(@eqdkpContentFontColor, 22.5);
 }
 
 .manage_menues_block .toggle_button {
