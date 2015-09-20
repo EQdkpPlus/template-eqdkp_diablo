@@ -30,10 +30,10 @@
 	<content_contrast_color></content_contrast_color>
 	<content_contrast_background_color></content_contrast_background_color>
 	<content_contrast_border_color></content_contrast_border_color>
-	<content_positive_color></content_positive_color>
-	<content_negative_color></content_negative_color>
-	<content_neutral_color></content_neutral_color>
-	<content_highlight_color></content_highlight_color>
+	<content_positive_color>rgb(51, 204, 51)</content_positive_color>
+	<content_negative_color>rgb(226, 59, 48)</content_negative_color>
+	<content_neutral_color>rgb(153, 153, 153)</content_neutral_color>
+	<content_highlight_color>rgb(209, 43, 43)</content_highlight_color>
 	
 	<userarea_background_color>rgb(25, 10, 9)</userarea_background_color>
 	<userarea_font_color>rgb(150, 150, 150)</userarea_font_color>
