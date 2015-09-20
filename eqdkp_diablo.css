@@ -926,20 +926,12 @@ a.blue, a.blue:hover, a.button, a.button:hover {
 }
 
 /*Image Button without value*/
-.novalue {
-	width: 24px;
-}
+.novalue { width: 24px; }
 
 /* general: positive/negative/neutral */
-.positive {
-	color: #33cc33;
-}
-.negative {
-	color: #e23b30;
-}
-.neutral {
-	color: #999;
-}
+.positive { color: @eqdkpContentPositiveColor; }
+.negative { color: @eqdkpContentNegativeColor; }
+.neutral { color: @eqdkpContentNeutralColor; }
 
 /* Hack for tinymce in colorswitch tables */
 .mceLayout tr:nth-child(odd),.mceLayout>td:nth-child(odd),
@@ -3270,7 +3262,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 }
 
 .user-groups a {
-	background: none repeat scroll 0 0 #D12B2B;
+	background: none repeat scroll 0 0 @eqdkpContentHighlightColor;
 	border-radius: 4px;
 	color: #332323;
 	display: inline-block;
