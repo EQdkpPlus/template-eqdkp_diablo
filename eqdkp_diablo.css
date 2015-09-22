@@ -980,7 +980,7 @@ a.blue, a.blue:hover, a.button, a.button:hover {
 	padding: 2px;
 }
 
-#contentBody th, .portalbox_content th {
+.table th, .portalbox_content th {
 	font-weight: bold;
 	white-space:nowrap;
 	text-align:left;
@@ -989,7 +989,7 @@ color: #EBB16C;
 background: url('@{eqdkpTemplateImagePath}table_bg_tile.png') repeat scroll 0% 0% #330B0B;
 }
 
-#contentBody th, #contentBody td {
+.table th, .table td {
 	line-height: 20px;
 	padding: 6px;
 	text-align: left;
@@ -1008,15 +1008,15 @@ background: url('@{eqdkpTemplateImagePath}table_bg_tile.png') repeat scroll 0% 0
 	border-top: 1px solid #505050;
 }
 
-#contentBody .row1, .portalbox_content .row1, .colorswitch tr:nth-child(even),.colorswitch>td:nth-child(even), .colorswitch > div:nth-child(even){
+.table .row1, .portalbox_content .row1, .colorswitch tr:nth-child(even), .colorswitch>td:nth-child(even), .colorswitch > div:nth-child(even){
 	background-color: #190A09;
 }
 
-#contentBody .row2,.portalbox_content .row2,.helpline, .colorswitch tr:nth-child(odd),.colorswitch>td:nth-child(odd), .colorswitch > div:nth-child(odd){
+.table .row2, .portalbox_content .row2, .helpline, .colorswitch tr:nth-child(odd), .colorswitch>td:nth-child(odd), .colorswitch > div:nth-child(odd){
 	background-color: #190A09;
 }
 
-#contentBody th.footer {
+.table th.footer {
 	font-style:italic;
 	font-weight: normal;
 	text-align: right;
@@ -1024,13 +1024,13 @@ background: url('@{eqdkpTemplateImagePath}table_bg_tile.png') repeat scroll 0% 0
 	border-bottom: none;
 }
 
-#contentBody th a {
+.table th a {
 	text-decoration: none;
 	color: #EBB16C;
 	font-family:'Trebuchet MS',Arial,sans-serif;
 }
 
-#contentBody th a:hover {
+.table th a:hover {
 	color: #FFDAAE;
 }
 
