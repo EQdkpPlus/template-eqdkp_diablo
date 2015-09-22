@@ -346,7 +346,7 @@ filter: dropshadow(color=#FB6C03, offx=1, offy=1);
 	padding: 1px;
 	margin-bottom: 14px;
 	border: 1px solid darken(@eqdkpContentBorderColor, 10) - #004343;
-	background-image: -moz-linear-gradient(center top , #390D0D, #250808);
+	background: linear-gradient(to bottom, @eqdkpContentBackgroundColor 0%, darken(@eqdkpContentBackgroundColor, 4.76) 100%) @eqdkpContentBackgroundColor;
 }
 
 #contentBody2 {
@@ -443,7 +443,7 @@ background-size: 100%;
 	font-family: 'Trebuchet MS',Arial,sans-serif;
 	padding: 5px 2px 5px 2px;
 	font-size: 14px;
-	background: url('@{eqdkpTemplateImagePath}headerbg.png') no-repeat scroll left top #4E1212;
+	background: url('@{eqdkpTemplateImagePath}headerbg.png') no-repeat scroll left top lighten(@eqdkpContentBackgroundColor, 10.5) - #000E0A;
 	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7) inset;
 	font-weight: bold;
 	border: 1px solid darken(@eqdkpContentBorderColor, 16.5) - #033030;
@@ -452,7 +452,7 @@ background-size: 100%;
 
 .portalbox_content {
 	padding: 5px;
-	background-color: #27100E;
+	background-color: darken(@eqdkpContentBackgroundColor, 4.3) + #000705;
 }
 
 #shoutbox_reload_button {
@@ -1431,12 +1431,10 @@ hr#system-readmore {
 }
 
 ul.breamcrumb {
-	background: linear-gradient(to bottom, #390E0E 0px, #2E0B0B 100%) repeat scroll 0% 0% transparent;
+	background: linear-gradient(to bottom, @eqdkpContentBackgroundColor 0%, darken(@eqdkpContentBackgroundColor, 4.76) 100%) @eqdkpContentBackgroundColor;
 	color: @eqdkpContentFontColor;
 	font-size: 13px;
-	border-width: 1px;
-	border-style: solid;
-	border-color: darken(@eqdkpContentBorderColor, 14.5) + #050000;
+	border: 1px solid darken(@eqdkpContentBorderColor, 14.5) + #050000;
 	border-radius: 3px 3px 3px 3px;
 	overflow: hidden;
 	width: 100%;
@@ -1447,13 +1445,12 @@ ul.breamcrumb li {
 }
 
 ul.breamcrumb a {
-padding: .4em 1em .7em 2em;
+	padding: .4em 1em .7em 2em;
 	float: left;
 	text-decoration: none;
 	position: relative;
-background-color: #DDD;
-color: #EBB16C;
-background-image: linear-gradient(to right, #2E0B0B, #390E0E);
+	color: #EBB16C;
+	background: linear-gradient(to left, @eqdkpContentBackgroundColor 0%, darken(@eqdkpContentBackgroundColor, 4.76) 100%) @eqdkpContentBackgroundColor;
 }
 
 ul.breamcrumb li:first-child a{
@@ -1468,7 +1465,7 @@ ul.breamcrumb li:first-child a i {
 }
 
 ul.breamcrumb a:hover{
-	background: #431010;
+	background: lighten(@eqdkpContentBackgroundColor, 2.7) - #010000;
 }
 
 ul.breamcrumb a::after,
@@ -1485,17 +1482,17 @@ ul.breamcrumb a::before{
 
 ul.breamcrumb a::after{
 	z-index: 2;
-	border-left-color: #390E0E;
+	border-left-color: @eqdkpContentBackgroundColor;
 }
 
 ul.breamcrumb a::before{
-	border-left-color: #6A1D18;
+	border-left-color: lighten(@eqdkpContentBackgroundColor, 11.7) + #000500;
 	right: -1.1em;
 	z-index: 1;
 }
 
 ul.breamcrumb a:hover::after{
-	border-left-color: #431010;
+	border-left-color: lighten(@eqdkpContentBackgroundColor, 2.7) - #010000;
 }
 
 ul.breamcrumb .current,
