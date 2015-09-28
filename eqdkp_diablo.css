@@ -388,12 +388,12 @@ background-size: 100%;
 /* Contrast */
 .contentContrast {
 	color: @eqdkpContentContrastColor;
-	background-color: @eqdkpContentContrastBackgroundColor;
+	background: linear-gradient(to bottom, @eqdkpContentContrastBackgroundColor 0%, darken(@eqdkpContentContrastBackgroundColor, 4.76) 100%) @eqdkpContentContrastBackgroundColor;
 	border-color: @eqdkpContentContrastBorderColor;
 }
 
 .contentContrast h1, .contentContrast h2, .contentContrast h3 {
-	color: @eqdkpContentContrastColor;
+	color: @eqdkpContentFontColorHeadings;
 }
 
 #contentFooter {

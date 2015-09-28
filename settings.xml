@@ -27,9 +27,9 @@
 	<content_link_color_hover></content_link_color_hover>
 	<content_border_color>rgb(110, 110, 110)</content_border_color>
 	<content_accent_color></content_accent_color>
-	<content_contrast_color></content_contrast_color>
-	<content_contrast_background_color></content_contrast_background_color>
-	<content_contrast_border_color></content_contrast_border_color>
+	<content_contrast_color>rgb(171, 171, 171)</content_contrast_color>
+	<content_contrast_background_color>rgb(57, 13, 13)</content_contrast_background_color>
+	<content_contrast_border_color>rgb(110, 110, 110)</content_contrast_border_color>
 	<content_positive_color>rgb(51, 204, 51)</content_positive_color>
 	<content_negative_color>rgb(226, 59, 48)</content_negative_color>
 	<content_neutral_color>rgb(153, 153, 153)</content_neutral_color>
