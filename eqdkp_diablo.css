@@ -4367,7 +4367,7 @@ background: none;
 	width: .5em;
 	height: 1em;
 	border-radius: .5em 0 0 .5em;
-	background-image: linear-gradient(to right, lighten(@ribbon,1%) 0%, darken(@ribbon,1%) 100%);
+	background-image: linear-gradient(to right, lighten(@ribbon,1%) 0%, darken(@ribbon,30%) 100%);
 	box-shadow: 0 .062em 0 rgba(255,255,255,.6);
 }
 .featured .ribbon > span {
@@ -4380,7 +4380,7 @@ background: none;
 	background-image: linear-gradient(to right, darken(@featuredColor,1%) 0%, @featuredColor 100%);
 }
 .featured .ribbon > span:after {
-	background-image: linear-gradient(to right, lighten(@featuredColor,1%) 0%, darken(@featuredColor,1%) 100%);
+	background-image: linear-gradient(to right, lighten(@featuredColor,1%) 0%, darken(@featuredColor,30%) 100%);
 }
 
 /* Article Boxes for Calendarentries */
