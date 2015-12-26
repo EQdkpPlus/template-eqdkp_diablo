@@ -2007,7 +2007,7 @@ color: #D59535 !important;
 	display: none;
 }
 
-.article-container.featured h2:before, .article_detail_container.featured h1.contentTitle:before {
+.article-container.featured header > h2:before, .article_detail_container.featured h1.contentTitle:before {
 	content: "\f005";
 	font-family: FontAwesome;
 	color: gold;
@@ -2056,6 +2056,137 @@ ul.portal_block {
 .permissions {
 	width: 50%;
 	float: left;
+}
+
+/* ACP: styles management */
+.style {
+	width: 300px;
+	height: 200px;
+	margin: 5px;
+	float: left;
+	position: relative;
+	overflow: hidden;
+	background: #CCC;
+	border: 1px solid #6E6E6E;
+}
+.style-preview {
+	width: 300px;
+	height: 200px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	filter: brightness(.5);
+	transition: .5s ease-in-out;
+	z-index: 0;
+	background-size: cover;
+	background-position: center;
+}
+.style:hover .style-preview {
+	filter: brightness(1);
+}
+
+.style input[type="radio"] {
+	opacity: 0;
+}
+.style input[type="radio"] + label {
+	display: block;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	border: 1px solid #999;
+	border-radius: 3px;
+	background: #050505;
+	cursor: pointer;
+	z-index: 1;
+}
+.style input[type="radio"] + label:hover:before {
+	content: '';
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	border-radius: 1px;
+	background: #ccc;
+}
+.style input[type="radio"]:checked + label:before {
+	content: '';
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	border-radius: 1px;
+	background: #CB822B;
+}
+
+.style-action {
+	opacity: 1;
+	width: 100%;
+	padding: 3px 7px;
+	position: relative;
+	top: 0;
+	left: 0;
+	background-color: rgba(135, 135, 135, 0.7);
+	z-index: 1;
+	display: inline-block;
+	text-align: right;
+	padding: 3px 0px 3px 0px;
+	min-height: 17px;
+}
+.style:hover .style-action {
+	display: inline-block;
+	opacity: 1;
+}
+.styles-container .style-action a {
+	color: #000 !important;
+}
+
+.style-info {
+	width: 300px;
+	position: absolute;
+	bottom: -43px;
+	color: #000 !important;
+	background-color: rgba(135, 135, 135, 0.7);
+	transition: bottom .3s ease-in;
+	z-index: 1;
+	padding-top: 2px;
+}
+.style-info:hover {
+	bottom: 0;
+}
+.style-info h2 {
+	margin: 0 15px;
+}
+.style-info table {
+	margin: 5px 10px;
+}
+.style-info tbody {
+	background: none !important;
+}
+.style-info td {
+	padding-right: 15px;
+}
+
+.style-checkbox {
+	float: left;
+}
+
+.style_red, .style_red_local {
+	border-color: #E80000; /* color from .icon-color-red, defined at eqdkpplus.css */
+}
+
+.style_yellow {
+	border-color: #e9ec00; /* color from .icon-color-yellow, defined at eqdkpplus.css */
+}
+.style-version {
+	float: right;
+	font-size: @eqdkpBodyFontSize;
+	padding-top: 3px;
 }
 
 /***************************************************
@@ -2135,7 +2266,12 @@ fieldset.settings.floatRight.raid input[type="text"]{
 	border-bottom: 1px solid #6E6E6E;
 	margin-top: 5px;
 }
-
+.calendar_blackicon{
+	color: black;
+}
+.calendar_redicon{
+	color: red;
+}
 .raidcal_name .toggle_button {
 	font-size: 13px;
 	font-weight: normal;
@@ -2361,6 +2497,19 @@ span.group_selector {
 }
 .eventdata-details div{
 	margin: 8px 0px;
+}
+#eventdetailsmap_map{
+	height: 300px;
+}
+#mapframe_eventdetailsmap{
+
+}
+.map_frame{
+	background:#fff;
+	padding:15px;
+	margin-bottom: 12px;
+	box-shadow: 0 0 20px #999;
+	border-radius:2px;
 }
 
 /* general: game specific */
@@ -3739,6 +3888,10 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	.responsive .bigDateTd {
 		display: none;
 	}
+	
+	#bottommenu_admin, #bottommenu_chars{
+		width: 90% !important;
+	}
 }
 
 @media all and (max-width: 590px) {
@@ -3801,6 +3954,11 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	
 	.list-type1 .ribbons, .list-type2 .ribbons, .list-type3 .ribbons  {
 		display: none;
+	}
+	
+	#bottommenu_admin, #bottommenu_chars{
+		width: 98% !important;
+		height: 64px !important;
 	}
 }
 
@@ -4113,6 +4271,25 @@ background: none;
 	display: block;
 	position: relative;
 }
+.middleDateNumber {
+	font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-weight: 100;
+	width: 100%;
+    display: block;
+}
+
+.middleDateTime {
+	font-size: 25px;
+    line-height: 25px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-weight: 100;
+	width: 100%;
+    display: block;
+}
 
 .list-type1 .td.bigDateTd, .list-type3 .td.bigDateTd {
 	width: 100px;
@@ -4131,59 +4308,122 @@ background: none;
 }
 
 /* Ribbons */
-
-.article_content {
-  position: relative;
-}
-
 @ribbon: @eqdkpContentHighlightColor;
+@featuredColor: gold;
+
 .ribbon {
-  position: absolute;
-  right: -5px; top: -5px;
-  z-index: 1;
-  overflow: hidden;
-  width: 75px; height: 75px;
-  text-align: right;
-	& span {
-	  font-size: 10px;
-	  font-weight: bold;
-	  color: @eqdkpContentBackgroundColor;
-	  text-transform: uppercase;
-	  text-align: center;
-	  line-height: 20px;
-	  height: 20px;
-	  transform: rotate(45deg);
-	  width: 100px;
-	  display: block;
-	  background: @ribbon;
-	  background: linear-gradient(lighten(@ribbon,20%) 0%, @ribbon 100%);
-	  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
-	  position: absolute;
-	  top: 19px; right: -21px;
-		&::before {
-			content: "";
-		  position: absolute; left: 0px; top: 100%;
-		  z-index: -1;
-		  border-left: 3px solid @ribbon;
-		  border-right: 3px solid transparent;
-		  border-bottom: 3px solid transparent;
-		border-top: 3px solid @ribbon;	}
-		&::after {
-		  content: "";
-		  position: absolute; right: 0px; top: 100%;
-		  z-index: -1;
-		  border-left: 3px solid transparent;
-		  border-right: 3px solid @ribbon;
-		  border-bottom: 3px solid transparent;
-		  border-top: 3px solid @ribbon;	}
-	}
+	margin: 3px;
+    margin-left: -18px;
+	width:98%;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+.ribbon span {
+  	position: relative;
+	display: block;	
+	text-align: center;
+	bottom: 0em;
+	left: 0;
+	margin-right: 0.2em;
+	padding: .75em 1.25em .75em .75em;
+	margin-left:-0.5em;
+	background-color: @ribbon;
+	background-image: linear-gradient(-90deg, lighten(@ribbon,20%) 0%, @ribbon 100%);
+	box-shadow: inset 0 .062em 0 rgba(255,255,255,.6), 0 .125em .25em rgba(0,0,0,.2);
+	color: @eqdkpContentBackgroundColor;
+	text-shadow: 0 -.062em 0 rgba(0,0,0,.2);
+	width: 90%;
+	text-align: center;
+	display: block;
+	border-radius: 0 0 0 .5em;
+	word-wrap: break-word;
 }
 
+.ribbon span:before {
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+}
+
+.ribbon span:before {
+	top: -1em;
+	left: 0em;
+	width: .5em;
+	height: 3em;
+	border-radius: 0.5em 0 0 .5em;
+	background-image: linear-gradient(to right, darken(@ribbon,1%) 0%, @ribbon 100%);
+}
+.ribbon span:after {
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+}
+
+.ribbon span:after {
+	top: -1em;
+	left: 0em;
+	width: .5em;
+	height: 1em;
+	border-radius: .5em 0 0 .5em;
+	background-image: linear-gradient(to right, lighten(@ribbon,1%) 0%, darken(@ribbon,1%) 100%);
+	box-shadow: 0 .062em 0 rgba(255,255,255,.6);
+}
 .featured .ribbon > span {
-	background: linear-gradient(lighten(gold,20%) 0%, gold 100%);
+	background: linear-gradient(-90deg, lighten(@featuredColor,20%) 0%, @featuredColor 100%);
 	color: black;
 }
 
+.featured .ribbon > span:before {
+	border-bottom-color: @featuredColor;
+	background-image: linear-gradient(to right, darken(@featuredColor,1%) 0%, @featuredColor 100%);
+}
+.featured .ribbon > span:after {
+	background-image: linear-gradient(to right, lighten(@featuredColor,1%) 0%, darken(@featuredColor,1%) 100%);
+}
+
+/* Article Boxes for Calendarentries */
+.articleCalendarEventBox {
+  display: inline-block;
+  max-width: 500px;
+  padding: 11px 14px;
+  white-space: nowrap;
+  background-color: @eqdkpContentContrastBackgroundColor;
+  border: 1px solid @eqdkpContentContrastBorderColor;
+  border-radius: 5px;
+  color: @eqdkpContentContrastColor;
+  margin: 5px;
+}
+
+.articleCalendarEventBox .bigDateContainer {
+	border-right-color: @eqdkpContentContrastBorderColor;
+}
+
+.articleCalendarEventBox .bigDateNumber {
+	font-size: 35px;
+	line-height: 35px;
+	margin-bottom: 5px;
+}
+.articleCalendarEventBox .green, .articleCalendarEventBox .orange, .articleCalendarEventBox .red, .articleCalendarEventBox .green:hover, .articleCalendarEventBox .orange:hover, .articleCalendarEventBox .red:hover {
+	background: none !important;
+	border: none !important;
+}
+.articleCalendarEventBox .green, .articleCalendarEventBox .green:hover {
+	color: green !important;;
+}
+
+.articleCalendarEventBox .orange, .articleCalendarEventBox .orange:hover {
+	color: orange !important;;
+}
+
+.articleCalendarEventBox .red, .articleCalendarEventBox .red:hover {
+	color: red !important;;
+}
+
+.qtip-content.ui-widget-content {
+	border-radius: 3px;
+}
 
 
 /*****************************************
