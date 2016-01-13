@@ -28,9 +28,9 @@ $(document).ready(function(){
 			var icons = $(this).parent().find('.icons').html();
 			$(".mychars-points-target").html(icons + " "+current);
 			var id = $(this).parent().attr('id');
-			localStorage.setItem('mcp_'+mmocms_userid, id);
+			if(test_localstorage()) localStorage.setItem('mcp_'+mmocms_userid, id);
 		});
-		var saved = localStorage.getItem('mcp_'+mmocms_userid);
+		var saved = (test_localstorage()) ? localStorage.getItem('mcp_'+mmocms_userid) : "";
 		
 		if (saved && saved != "" && $('#'+saved).find('.current').html() != undefined){
 			$('#'+saved).addClass("active");
@@ -177,4 +177,12 @@ function notification_update(){
 		
 	//5 Minute
 	window.setTimeout("notification_update()", 1000*60*5);
+}
+
+function test_localstorage(){
+	try {
+		return ('localStorage' in window) && window[localstorage] !== null;
+	} catch(e) {
+		return false;
+	}
 }
