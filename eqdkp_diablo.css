@@ -1360,49 +1360,39 @@ div.pagination {
 
 /* Article Sitemap */
 .articleSitemap, .categoryChildSitemap {
-	border-color: #DDDDDD;
-	border-image: none;
-	border-style: solid;
-	border-width: 1px 1px 1px 1px;
+	border: 1px solid @eqdkpContentContrastBorderColor;
+	border-radius: 3px;
 	text-decoration: none;
-	background-color: #fff;
+	background-color: @eqdkpContentContrastBackgroundColor;
 	line-height: 20px;
 	margin-left: 10px;
 	margin-bottom: 10px;
 	float: right;
-	border-radius: 4px;
 	min-width: 150px;
-}
-.categoryChildSitemap { border-color: transparent; background-color: transparent; }
-
-.articleSitemap li, .categoryChildSitemap li {
-	padding: 6px 12px;
-	display: inline-block;
-}
-
-.articleSitemap li:last-child, .categoryChildSitemap li:last-child {
-	border: none;
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;
-}
-
-.articleSitemap li:first-child, .categoryChildSitemap li:first-child {
-	border-top-left-radius: 3px;
-	border-bottom-left-radius: 3px;
-}
-
-.articleSitemap li.active {
-	background-color: #F7F7F9;
-	cursor: default;
-}
-
-.articleSitemap li.active a {
-	color: #999999;
-}
-
-.articleSitemap li:hover, .categoryChildSitemap li:hover {
-	background-color: #7E231E;
-	cursor: default;
+	
+	li {
+		padding: 6px 12px;
+		border-bottom: 1px solid @eqdkpContentContrastBorderColor;
+		
+		&:hover,
+		&.active {
+			background-color: lighten(@eqdkpContentContrastBackgroundColor, 10);
+			cursor: default;
+			
+			a {
+				color: lighten(@eqdkpContentContrastColor, 10);
+			}
+		}
+		&:first-child {
+			border-top-left-radius: 3px;
+			border-bottom-left-radius: 3px;
+		}
+		&:last-child {
+			border: none;
+			border-top-right-radius: 3px;
+			border-bottom-right-radius: 3px;
+		}
+	}
 }
 
 .noheader .categoryChildSitemap {
