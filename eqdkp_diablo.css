@@ -1403,7 +1403,8 @@ hr#system-readmore {
 	display:none;
 }
 
-ul.breadcrumb {
+ul.breadcrumb,
+ul.breamcrumb {
 	background: linear-gradient(to bottom, @eqdkpContentBackgroundColor 0%, darken(@eqdkpContentBackgroundColor, 4.76) 100%) @eqdkpContentBackgroundColor;
 	color: @eqdkpContentFontColor;
 	font-size: 13px;
@@ -1413,11 +1414,13 @@ ul.breadcrumb {
 	width: 100%;
 }
 
-ul.breadcrumb li {
+ul.breadcrumb li,
+ul.breamcrumb li  {
 	float: left;
 }
 
-ul.breadcrumb a {
+ul.breadcrumb a,
+ul.breamcrumb a  {
 	padding: .4em 1em .7em 2em;
 	float: left;
 	text-decoration: none;
@@ -1426,23 +1429,28 @@ ul.breadcrumb a {
 	background: linear-gradient(to left, @eqdkpContentBackgroundColor 0%, darken(@eqdkpContentBackgroundColor, 4.76) 100%) @eqdkpContentBackgroundColor;
 }
 
-ul.breadcrumb li:first-child a{
+ul.breadcrumb li:first-child a,
+ul.breamcrumb li:first-child a {
 	padding-left: 1em;
 	padding-right: 0.5em;
 	padding-bottom: 0.3em;
 }
 
-ul.breadcrumb li:first-child a i {
+ul.breadcrumb li:first-child a i,
+ul.breamcrumb li:first-child a i {
 	font-size: 1.5em;
 	margin-top: -0.1em;
 }
 
-ul.breadcrumb a:hover{
+ul.breadcrumb a:hover,
+ul.breamcrumb a:hover {
 	background: lighten(@eqdkpContentBackgroundColor, 2.7) - #010000;
 }
 
 ul.breadcrumb a::after,
-ul.breadcrumb a::before{
+ul.breamcrumb a::after,
+ul.breadcrumb a::before,
+ul.breamcrumb a::before {
 	content: "";
 	position: absolute;
 	top: 50%;
@@ -1453,33 +1461,41 @@ ul.breadcrumb a::before{
 	right: -1em;
 }
 
-ul.breadcrumb a::after{
+ul.breadcrumb a::after,
+ul.breamcrumb a::after {
 	z-index: 2;
 	border-left-color: @eqdkpContentBackgroundColor;
 }
 
-ul.breadcrumb a::before{
+ul.breadcrumb a::before,
+ul.breamcrumb a::before {
 	border-left-color: lighten(@eqdkpContentBackgroundColor, 11.7) + #000500;
 	right: -1.1em;
 	z-index: 1;
 }
 
-ul.breadcrumb a:hover::after{
+ul.breadcrumb a:hover::after,
+ul.breamcrumb a:hover::after {
 	border-left-color: lighten(@eqdkpContentBackgroundColor, 2.7) - #010000;
 }
 
 ul.breadcrumb .current,
-ul.breadcrumb .current:hover{
+ul.breamcrumb .current,
+ul.breadcrumb .current:hover,
+ul.breamcrumb .current:hover {
 	font-weight: bold;
 	background: none;
 }
 
 ul.breadcrumb .current::after,
-ul.breadcrumb .current::before{
+ul.breamcrumb .current::after,
+ul.breadcrumb .current::before,
+ul.breamcrumb .current::before {
 	content: normal;
 }
 
-.breadcrumb-container {
+.breadcrumb-container,
+.breamcrumb-container {
 	margin-bottom: 8px;
 }
 
@@ -3603,31 +3619,43 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		float: none;
 	}
 
-	.responsive .breadcrumb li, .responsive .breadcrumb li a:after, .responsive .breadcrumb li a:before {
+	.responsive .breadcrumb li,
+	.responsive .breamcrumb li,
+	.responsive .breadcrumb li a:after,
+	.responsive .breamcrumb li a:after,
+	.responsive .breadcrumb li a:before,
+	.responsive .breamcrumb li a:before {
 		display: none;
 	}
 
-	.responsive .breadcrumb li:first-child, .responsive .breadcrumb li:nth-last-of-type(2) {
+	.responsive .breadcrumb li:first-child,
+	.responsive .breamcrumb li:first-child,
+	.responsive .breadcrumb li:nth-last-of-type(2),
+	.responsive .breamcrumb li:nth-last-of-type(2) {
 		display: inline;
 	}
 
-	.responsive .breadcrumb li:first-child a {
+	.responsive .breadcrumb li:first-child a,
+	.responsive .breamcrumb li:first-child a {
 		border-right: 1px solid #6E6E6E;
 		padding-right: 8px;
 		line-height: 27px;
 		padding-left: 8px !important;
 	}
 
-	.responsive .breadcrumb li {
+	.responsive .breadcrumb li,
+	.responsive .breamcrumb li {
 		font-size: 14px;
 	}
 
-	.responsive .breadcrumb li:nth-last-of-type(2) a {
+	.responsive .breadcrumb li:nth-last-of-type(2) a,
+	.responsive .breamcrumb li:nth-last-of-type(2) a {
 		padding-left: 22px;
 		padding-top: 11px;
 	}
 
-	.responsive .breadcrumb li:nth-last-of-type(2) a:before {
+	.responsive .breadcrumb li:nth-last-of-type(2) a:before,
+	.responsive .breamcrumb li:nth-last-of-type(2) a:before {
 		content:"\f060";
 		display:inline;
 		border: none;
@@ -3640,7 +3668,8 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		font-family: "FontAwesome";
 	}
 
-	.responsive .breadcrumb li:first-child a:before {
+	.responsive .breadcrumb li:first-child a:before,
+	.responsive .breamcrumb li:first-child a:before {
 		display: none;
 	}
 
@@ -3795,7 +3824,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		margin-right: 0;
 	}
 
-	.responsive .comment_avatar_container, .responsive .comment_write_container::after, .responsive .comment_write_container::before, .comment_container::after, .comment_container::before{ 
+	.responsive .comment_avatar_container, .responsive .comment_write_container::after, .responsive .comment_write_container::before, .comment_container::after, .comment_container::before{
 		display: none;
 	}
 	.responsive .comment_container, .responsive #comment_button, .responsive .reply-trigger, .responsive .reply_button, .responsive .comment_write_container {
@@ -4297,7 +4326,7 @@ background: none;
 }
 .ribbon span {
   	position: relative;
-	display: block;	
+	display: block;
 	text-align: center;
 	bottom: 0em;
 	left: 0;
