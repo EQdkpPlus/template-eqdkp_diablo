@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<update>
+	<styleupdate styleversion="9.9.9">
+		<delete>jquery_tmpl.css</delete>
+	</styleupdate>
+</update>

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<settings styleversion="0.2.1">	
+<settings styleversion="0.2.1">
 	<template_path>eqdkp_diablo</template_path>
 	<attendees_columns>6</attendees_columns>
 	<logo_position>left</logo_position>
+	<favicon_img></favicon_img>
+	<banner_img></banner_img>
 	<background_type>0</background_type>
 	<background_img></background_img>
 	<background_pos>normal</background_pos>
+	<editor_theme>tundora</editor_theme>
 	<column_right_width>0px</column_right_width>
 	<column_left_width>0px</column_left_width>
 	<portal_width>0px</portal_width>

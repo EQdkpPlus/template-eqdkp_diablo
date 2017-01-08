@@ -1,24 +1,4 @@
-/*	Project:	EQdkp-Plus
- *	Package:	Diablo Template Package
- *	Link:		http://eqdkp-plus.eu
- *
- *	Copyright (C) 2006-2016 EQdkp-Plus Developer Team
- *
- *	This program is free software: you can redistribute it and/or modify
- *	it under the terms of the GNU Affero General Public License as published
- *	by the Free Software Foundation, either version 3 of the License, or
- *	(at your option) any later version.
- *
- *	This program is distributed in the hope that it will be useful,
- *	but WITHOUT ANY WARRANTY; without even the implied warranty of
- *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *	GNU Affero General Public License for more details.
- *
- *	You should have received a copy of the GNU Affero General Public License
- *	along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
-$(document).ready(function(){
+$(function(){
 	if(mmocms_header_type == 'full'){
 		/* My Chars Points */
 		$('.mychars-points-tooltip .char').on('click', function(){
@@ -28,10 +8,10 @@ $(document).ready(function(){
 			var icons = $(this).parent().find('.icons').html();
 			$(".mychars-points-target").html(icons + " "+current);
 			var id = $(this).parent().attr('id');
-			if(test_localstorage()) localStorage.setItem('mcp_'+mmocms_userid, id);
+			if(JQisLocalStorageNameSupported()) localStorage.setItem('mcp_'+mmocms_userid, id);
 		});
-		var saved = (test_localstorage()) ? localStorage.getItem('mcp_'+mmocms_userid) : "";
-		
+		var saved = (JQisLocalStorageNameSupported()) ? localStorage.getItem('mcp_'+mmocms_userid) : "";
+
 		if (saved && saved != "" && $('#'+saved).find('.current').html() != undefined){
 			$('#'+saved).addClass("active");
 			var current = $('#'+saved).find('.current').html();
@@ -43,16 +23,34 @@ $(document).ready(function(){
 			var icons = $('.mychars-points-tooltip .main').find('.icons').html();
 			$(".mychars-points-target").html(icons + " "+current);
 		}
-		
+
 		/* Main Menu */
 		$('ul.mainmenu li.link_li_indexphp a.link_indexphp, ul.mainmenu li.link_li_entry_home a.link_entry_home').html('');
-		$('ul.mainmenu').addClass('sf-menu');
-		jQuery('ul.mainmenu').superfish({
-				delay:		400,
-				animation:	{opacity:'show',height:'show'},
-				speed:		'fast'
+
+		/* Mobile Menu */
+		var mobile_menu_wrapper		= $('.mainmenu-mobile-wrapper, .adminmenu-mobile-wrapper'),
+			mobile_menu_position	= [];
+		mobile_menu_wrapper.find('a.sub-menu-arrow').on('click', function(){
+			var depth		= $(this).parentsUntil(mobile_menu_wrapper).parents('.sub-menu').length,
+				is_admin	= $(this).parentsUntil(mobile_menu_wrapper).last().hasClass('adminmenu-mobile');
+			
+			if( $(this).parent().hasClass('open') ){
+				if(is_admin && depth == 0) $('.mainmenu-mobile-wrapper').removeClass('hidden');
+				mobile_menu_wrapper.css('transform','translate3d('+( -100 * depth)+'% ,0,0)');
+				$(this).parent().removeClass('open');
+				mobile_menu_wrapper.removeClass('open');
+				$('.nav-mobile .mobile-overlay').scrollTop( mobile_menu_position.pop() );
+				
+			}else{
+				mobile_menu_position.push( $('.nav-mobile .mobile-overlay').scrollTop() );
+				$(this).parent().addClass('open');
+				mobile_menu_wrapper.addClass('open');
+				mobile_menu_wrapper.css('transform','translate3d('+( -100 * (depth + 1))+'% ,0,0)');
+				if(is_admin && depth == 0) $('.mainmenu-mobile-wrapper').addClass('hidden');
+				$('.nav-mobile .mobile-overlay').scrollTop(0);
+			}
 		});
-		
+
 		/* Tooltip Triggers */
 		$('.tooltip-trigger').on('click', function(event){
 			event.preventDefault();
@@ -65,19 +63,25 @@ $(document).ready(function(){
 				}
 			});
 		});
-		
+
 		/* User Tooltip Doubleclick */
 		$('.user-tooltip-trigger').on('dblclick', function(event){
 			$("#user-tooltip").hide('fast');
 			window.location=mmocms_controller_path+"Settings"+mmocms_seo_extension+mmocms_sid;
 		});
-		
+
+		/* Admin Tooltip Doubleclick */
+		$('.admin-tooltip-trigger').on('dblclick', function(event){
+			$("#admin-tooltip").hide('fast');
+			window.location=mmocms_root_path+"admin"+mmocms_sid;
+		});
+
 		user_clock();
-		
+
 		$( ".openLoginModal" ).on('click', function() {
 			$( "#dialog-login" ).dialog( "open" );
 		});
-		
+
 		/* Notifications */
 		$('.notification-tooltip-trigger').on('click', function(event){
 			$(".notification-tooltip").hide('fast');
@@ -90,16 +94,16 @@ $(document).ready(function(){
 			     break;
 			   }
 			}
-			
+
 			$(document).on('click', function(event) {
 				var count = $(event.target).parents('.notification-tooltip-container').length;
 				if (count == 0 && (!$(event.target).hasClass('notification-markasread')) ){
 					$(".notification-tooltip").hide('fast');
 				}
 			});
-			
+
 		});
-		
+
 		$('.notification-content').on('click', '.notification-markasread', function() {
 			var ids = $(this).parent().parent().data('ids');
 			$(this).parent().parent().remove();
@@ -112,7 +116,7 @@ $(document).ready(function(){
 				if ($(this).hasClass('notification-bubble-green')) $('.notification-content ul li.prio_0').show();
 				if ($(this).hasClass('notification-bubble-yellow')) $('.notification-content ul li.prio_1').show();
 				if ($(this).hasClass('notification-bubble-red')) $('.notification-content ul li.prio_2').show();
-				
+
 				$(this).removeClass('filtered');
 			} else {
 				//hide all of this
@@ -123,12 +127,12 @@ $(document).ready(function(){
 			}
 		});
 		//Periodic Update of Notifications
-		window.setTimeout("notification_update()", 1000*60*5);
+		window.setTimeout("notification_update()", 300000);
 	}
 })
 
 /* User clock */
-function user_clock(){	
+function user_clock(){
 	var mydate = mymoment.format(user_clock_format);
 	$('.user_time').html(mydate);
 	mymoment.add(1, 's');
@@ -139,7 +143,7 @@ function user_clock(){
 var favicon;
 function notification_favicon(red, yellow, green){
 	if (typeof favicon === 'undefined') return;
-	
+
 	if (red > 0) {
 		favicon.badge(red, {bgColor: '#d00'});
 		return;
@@ -169,20 +173,12 @@ function notification_show_only(name){
 	}
 }
 
-function notification_update(){			
+function notification_update(){
 	$.get(mmocms_controller_path+"Notifications"+mmocms_seo_extension+mmocms_sid+"&load", function(data){
 		$('.notification-content ul').html(data);
 		recalculate_notification_bubbles();
 	});
-		
-	//5 Minute
-	window.setTimeout("notification_update()", 1000*60*5);
-}
 
-function test_localstorage(){
-	try {
-		return ('localStorage' in window) && window[localstorage] !== null;
-	} catch(e) {
-		return false;
-	}
+	//5 Minute
+	window.setTimeout("notification_update()", 300000);
 }
