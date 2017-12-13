@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <update>
-	<styleupdate styleversion="9.9.9">
+	<styleupdate styleversion="0.3.0">
 		<delete>jquery_tmpl.css</delete>
+		<delete>images/ui-bg_flat_0_333333_40x100.png</delete>
+		<delete>images/ui-bg_flat_65_a6a6a6_40x100.png</delete>
+		<delete>images/ui-bg_flat_75_f3d8d8_40x100.png</delete>
+		<delete>images/ui-bg_flat_75_ffffff_40x100.png</delete>
+		<delete>images/ui-bg_highlight-soft_100_000000_1x100.png</delete>
+		<delete>images/ui-bg_highlight-soft_15_cc0000_1x100.png</delete>
+		<delete>images/ui-bg_highlight-soft_65_878787_1x100.png</delete>
+		<delete>images/ui-icons_004276_256x240.png</delete>
+		<delete>images/ui-icons_cc0000_256x240.png</delete>
+		<delete>images/ui-icons_ffffff_256x240.png</delete>
 	</styleupdate>
 </update>
