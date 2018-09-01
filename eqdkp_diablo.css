@@ -3673,6 +3673,15 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	.portal .columnContainer .second.column { order:0; }
 	.portal .columnContainer .third.column { order:2; }
 	
+	.notsignedpanel_close:before{
+		top: 10px;
+    		left: 10px;
+	}
+	.notsignedpanel {
+		overflow: scroll;
+		height: auto;
+		top: 0;
+	}
 }
 
 @media all and (max-width: 590px) {
