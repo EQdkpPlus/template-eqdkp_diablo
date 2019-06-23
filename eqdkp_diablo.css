@@ -4155,14 +4155,14 @@ background: none;
 }
 
 .list-type4 {
-	display:flex; 
+	display:flex;
 	flex-wrap: wrap;
 }
 
 .article-container.list-type4 {
-	width: 500px; 
+	width: 480px;
 	margin-right:20px;
-	background-color: @eqdkpContainerBackgroundColor;
+	background-color: @eqdkpContentContrastBackgroundColor;
 	flex-grow: 1;
 	display: block;
 }
@@ -4377,6 +4377,9 @@ body.module-iframe {
 	display: none;
 }
 
+.fixed_width textarea {
+	max-width: 90%;
+}
 
 
 /*****************************************
